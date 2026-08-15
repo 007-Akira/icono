@@ -14,16 +14,15 @@ export function IntroOverlay() {
     const hasPlayed = sessionStorage.getItem(SESSION_KEY) === "true";
     let hideTimer: number | undefined;
 
-    if (!hasPlayed) {
-      sessionStorage.setItem(SESSION_KEY, "true");
-    }
-
     const animationFrame = window.requestAnimationFrame(() => {
       if (hasPlayed) {
         setPhase("hidden");
         return;
       }
 
+      // Write only when playback actually begins. This avoids React Strict Mode's
+      // development-only effect cleanup marking a cancelled animation as played.
+      sessionStorage.setItem(SESSION_KEY, "true");
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       setPhase("playing");
       hideTimer = window.setTimeout(
