@@ -55,6 +55,12 @@ textarea {
 .editorial-image:hover {
   transform: scale(1.025);
 }
+.service-browser {
+  scrollbar-width: none;
+}
+.service-browser::-webkit-scrollbar {
+  display: none;
+}
 .field {
   width: 100%;
   border: 0;
