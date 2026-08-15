@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="bg-smoke pb-24 pt-16 text-floral lg:pb-16">
       <div className="page-shell grid gap-12 md:grid-cols-12">
         <div className="md:col-span-4">
-          <Link href="/" aria-label="Icono home">
+          <Link href="/#top" aria-label="Icono home — return to top">
             <BrandLogo className="h-auto w-52" />
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-6 text-bone">
@@ -21,7 +21,7 @@ export function Footer() {
         <div className="md:col-span-2">
           <p className="eyebrow mb-5 text-bone">Explore</p>
           <div className="flex flex-col gap-3 text-sm">
-            <Link href="/">Home</Link>
+            <Link href="/#top">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/services/hair">Services</Link>
             <Link href="/gallery">Gallery</Link>
@@ -62,26 +62,35 @@ export function Footer() {
           </p>
           <a href={`mailto:${business.email}`}>{business.email}</a>
         </div>
-        <p className="mt-5 text-[10px] tracking-wide text-bone/45">
-          Website by{" "}
+        <div className="mt-5 flex items-end justify-between gap-6">
+          <p className="text-[10px] tracking-wide text-bone/45">
+            Website by{" "}
+            <a
+              href="https://www.linkedin.com/in/adithya-kiran-08291827b/"
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-bone"
+            >
+              Adithya Kiran
+            </a>{" "}
+            &amp;{" "}
+            <a
+              href="https://www.linkedin.com/in/neev-justin"
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-bone"
+            >
+              Neev Justin
+            </a>
+          </p>
           <a
-            href="https://www.linkedin.com/in/adithya-kiran-08291827b/"
-            target="_blank"
-            rel="noreferrer"
-            className="transition-colors hover:text-bone"
+            href="#top"
+            aria-label="Back to top"
+            className="grid size-10 shrink-0 place-items-center border border-floral/20 text-sm text-bone transition-colors hover:border-floral/50 hover:text-floral"
           >
-            Adithya Kiran
-          </a>{" "}
-          &amp;{" "}
-          <a
-            href="https://www.linkedin.com/in/neev-justin"
-            target="_blank"
-            rel="noreferrer"
-            className="transition-colors hover:text-bone"
-          >
-            Neev Justin
+            <span aria-hidden>↑</span>
           </a>
-        </p>
+        </div>
       </div>
     </footer>
   );
