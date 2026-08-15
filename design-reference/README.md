@@ -12,6 +12,7 @@ This directory preserves the original Stitch-generated UI exports supplied for t
 | `stitch-exports/gallery-selected-work.html` | Gallery and selected-work concept |
 | `stitch-exports/home-design-system-variant.html` | Consolidated homepage/design-system variant |
 | `stitch-exports/service-hair-detail.html` | Hair service-detail concept |
+| `stitch-exports/service-hair-final-approved.html` | Final approved Hair service-page reference |
 | `stitch-exports/about-founder-variant.html` | Alternate founder/About export |
 
 ## Important
