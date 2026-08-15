@@ -2,4 +2,39 @@ import Image from "next/image";
 import { referenceImages } from "@/data/images";
 import { CTAButton } from "@/components/shared/CTAButton";
 
-export default function NotFound() { return <section className="relative grid min-h-[85svh] place-items-center overflow-hidden px-5 pb-20 pt-32 text-center text-floral"><Image src={referenceImages.softFabric} alt="" fill priority sizes="100vw" className="object-cover" /><div className="absolute inset-0 bg-smoke/80" /><div className="relative max-w-3xl"><p className="eyebrow text-bone">404</p><h1 className="display mt-5 text-5xl leading-none sm:text-7xl">This page has slipped out of view.</h1><p className="mx-auto mt-7 max-w-xl leading-7 text-bone">The page you&apos;re looking for may have moved or no longer exists.</p><div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row"><CTAButton href="/" variant="light">Return Home</CTAButton><CTAButton href="/services/hair" variant="outline" className="border-floral text-floral hover:bg-floral hover:text-smoke">Explore Services</CTAButton></div></div></section>; }
+export default function NotFound() {
+  return (
+    <section className="relative grid min-h-[85svh] place-items-center overflow-hidden px-5 pb-20 pt-32 text-center text-floral">
+      <Image
+        src={referenceImages.softFabric}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-smoke/80" />
+      <div className="relative max-w-3xl">
+        <p className="eyebrow text-bone">404</p>
+        <h1 className="display mt-5 text-5xl leading-none sm:text-7xl">
+          This page has slipped out of view.
+        </h1>
+        <p className="mx-auto mt-7 max-w-xl leading-7 text-bone">
+          The page you&apos;re looking for may have moved or no longer exists.
+        </p>
+        <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+          <CTAButton href="/" variant="light">
+            Return Home
+          </CTAButton>
+          <CTAButton
+            href="/services/hair"
+            variant="outline"
+            className="border-floral text-floral hover:bg-floral hover:text-smoke"
+          >
+            Explore Services
+          </CTAButton>
+        </div>
+      </div>
+    </section>
+  );
+}

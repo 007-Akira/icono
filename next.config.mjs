@@ -5,11 +5,17 @@ const nextConfig = {
     return [
       { source: "/services/skin", destination: "/services/skin-facial", permanent: true },
       { source: "/services/bridal", destination: "/services/bridal-makeup", permanent: true },
-      { source: "/services/speciality-services", destination: "/services/speciality", permanent: true },
+      {
+        source: "/services/speciality-services",
+        destination: "/services/speciality",
+        permanent: true,
+      },
     ];
   },
   images: {
-    remotePatterns: [{ protocol: "https", hostname: "lh3.googleusercontent.com", pathname: "/aida-public/**" }],
+    remotePatterns: [
+      { protocol: "https", hostname: "lh3.googleusercontent.com", pathname: "/aida-public/**" },
+    ],
   },
 };
 

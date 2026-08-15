@@ -4,10 +4,85 @@ import { business, formattedAddress } from "@/data/business";
 import { createGeneralWhatsAppUrl } from "@/lib/whatsapp";
 
 export function Footer() {
-  return <footer className="bg-smoke pb-24 pt-16 text-floral lg:pb-16"><div className="page-shell grid gap-12 md:grid-cols-12">
-    <div className="md:col-span-4"><Link href="/" aria-label="Icono home"><BrandLogo className="h-auto w-52" /></Link><p className="mt-5 max-w-sm text-sm leading-6 text-bone">{business.name}<br />Professional beauty, hair and makeover services in Kollam.</p><p className="mt-5 max-w-sm text-sm leading-6 text-bone">{formattedAddress}</p></div>
-    <div className="md:col-span-2"><p className="eyebrow mb-5 text-bone">Explore</p><div className="flex flex-col gap-3 text-sm"><Link href="/">Home</Link><Link href="/about">About</Link><Link href="/services/hair">Services</Link><Link href="/gallery">Gallery</Link><Link href="/contact">Contact</Link></div></div>
-    <div className="md:col-span-2"><p className="eyebrow mb-5 text-bone">Connect</p><div className="flex flex-col gap-3 text-sm text-bone"><a href={createGeneralWhatsAppUrl(business.whatsapp)} target="_blank" rel="noreferrer">WhatsApp</a><a href={business.instagramUrl} target="_blank" rel="noreferrer">Instagram</a><a href={`tel:${business.phonePrimary}`}>{business.phoneDisplay}</a><a href={business.googleMapsUrl} target="_blank" rel="noreferrer">Directions</a></div></div>
-    <div className="md:col-span-4"><p className="eyebrow mb-5 text-bone">Information</p><div className="grid gap-3 text-sm text-bone sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2"><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-and-conditions">Terms &amp; Conditions</Link><Link href="/disclaimer">Disclaimer</Link><Link href="/appointment-policy">Appointment Policy</Link><Link href="/accessibility">Accessibility</Link><Link href="/explore">Explore All Pages</Link></div></div>
-  </div><div className="page-shell mt-14 border-t border-floral/15 pt-6 text-xs text-bone"><div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} {business.name}. All rights reserved.</p><a href={`mailto:${business.email}`}>{business.email}</a></div><p className="mt-5 text-[10px] tracking-wide text-bone/45">Website by <a href="https://www.linkedin.com/in/adithya-kiran-08291827b/" target="_blank" rel="noreferrer" className="transition-colors hover:text-bone">Adithya Kiran</a> &amp; <a href="https://www.linkedin.com/in/neev-justin" target="_blank" rel="noreferrer" className="transition-colors hover:text-bone">Neev Justin</a></p></div></footer>;
+  return (
+    <footer className="bg-smoke pb-24 pt-16 text-floral lg:pb-16">
+      <div className="page-shell grid gap-12 md:grid-cols-12">
+        <div className="md:col-span-4">
+          <Link href="/" aria-label="Icono home">
+            <BrandLogo className="h-auto w-52" />
+          </Link>
+          <p className="mt-5 max-w-sm text-sm leading-6 text-bone">
+            {business.name}
+            <br />
+            Professional beauty, hair and makeover services in Kollam.
+          </p>
+          <p className="mt-5 max-w-sm text-sm leading-6 text-bone">{formattedAddress}</p>
+        </div>
+        <div className="md:col-span-2">
+          <p className="eyebrow mb-5 text-bone">Explore</p>
+          <div className="flex flex-col gap-3 text-sm">
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+            <Link href="/services/hair">Services</Link>
+            <Link href="/gallery">Gallery</Link>
+            <Link href="/contact">Contact</Link>
+          </div>
+        </div>
+        <div className="md:col-span-2">
+          <p className="eyebrow mb-5 text-bone">Connect</p>
+          <div className="flex flex-col gap-3 text-sm text-bone">
+            <a href={createGeneralWhatsAppUrl(business.whatsapp)} target="_blank" rel="noreferrer">
+              WhatsApp
+            </a>
+            <a href={business.instagramUrl} target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+            <a href={`tel:${business.phonePrimary}`}>{business.phoneDisplay}</a>
+            <a href={business.googleMapsUrl} target="_blank" rel="noreferrer">
+              Directions
+            </a>
+          </div>
+        </div>
+        <div className="md:col-span-4">
+          <p className="eyebrow mb-5 text-bone">Information</p>
+          <div className="grid gap-3 text-sm text-bone sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+            <Link href="/disclaimer">Disclaimer</Link>
+            <Link href="/appointment-policy">Appointment Policy</Link>
+            <Link href="/accessibility">Accessibility</Link>
+            <Link href="/explore">Explore All Pages</Link>
+          </div>
+        </div>
+      </div>
+      <div className="page-shell mt-14 border-t border-floral/15 pt-6 text-xs text-bone">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} {business.name}. All rights reserved.
+          </p>
+          <a href={`mailto:${business.email}`}>{business.email}</a>
+        </div>
+        <p className="mt-5 text-[10px] tracking-wide text-bone/45">
+          Website by{" "}
+          <a
+            href="https://www.linkedin.com/in/adithya-kiran-08291827b/"
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:text-bone"
+          >
+            Adithya Kiran
+          </a>{" "}
+          &amp;{" "}
+          <a
+            href="https://www.linkedin.com/in/neev-justin"
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:text-bone"
+          >
+            Neev Justin
+          </a>
+        </p>
+      </div>
+    </footer>
+  );
 }

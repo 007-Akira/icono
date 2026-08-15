@@ -3,4 +3,44 @@ import Link from "next/link";
 import { services } from "@/data/services";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 
-export function SignatureServices() { return <section id="services" className="bg-bone/45 py-section"><div className="page-shell"><div className="mb-16 text-center"><SectionLabel>Our Expertise</SectionLabel><h2 className="display mt-4 text-5xl">Signature Services</h2></div><div className="space-y-20">{services.slice(0,3).map((service, i) => <article key={service.slug} className="grid items-center gap-8 md:grid-cols-12"><div className={`relative min-h-[430px] overflow-hidden md:col-span-7 ${i % 2 ? "md:col-start-6 md:order-2" : ""}`}><Image src={service.heroImage} alt={`${service.title} editorial reference image`} fill sizes="(min-width: 768px) 58vw, 100vw" className="editorial-image object-cover" /></div><div className={`md:col-span-4 ${i % 2 ? "md:col-start-2 md:order-1" : "md:col-start-9"}`}><h3 className="display text-3xl">{service.title}</h3><p className="mt-5 leading-7 text-olive">{service.intro}</p><Link href={`/services/${service.slug}`} className="eyebrow mt-7 inline-block border-b border-smoke pb-1">Discover {service.navName}</Link></div></article>)}</div></div></section>; }
+export function SignatureServices() {
+  return (
+    <section id="services" className="bg-bone/45 py-section">
+      <div className="page-shell">
+        <div className="mb-16 text-center">
+          <SectionLabel>Our Expertise</SectionLabel>
+          <h2 className="display mt-4 text-5xl">Signature Services</h2>
+        </div>
+        <div className="space-y-20">
+          {services.slice(0, 3).map((service, i) => (
+            <article key={service.slug} className="grid items-center gap-8 md:grid-cols-12">
+              <div
+                className={`relative min-h-[430px] overflow-hidden md:col-span-7 ${i % 2 ? "md:col-start-6 md:order-2" : ""}`}
+              >
+                <Image
+                  src={service.heroImage}
+                  alt={`${service.title} editorial reference image`}
+                  fill
+                  sizes="(min-width: 768px) 58vw, 100vw"
+                  className="editorial-image object-cover"
+                />
+              </div>
+              <div
+                className={`md:col-span-4 ${i % 2 ? "md:col-start-2 md:order-1" : "md:col-start-9"}`}
+              >
+                <h3 className="display text-3xl">{service.title}</h3>
+                <p className="mt-5 leading-7 text-olive">{service.intro}</p>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="eyebrow mt-7 inline-block border-b border-smoke pb-1"
+                >
+                  Discover {service.navName}
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
