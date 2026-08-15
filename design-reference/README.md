@@ -34,6 +34,6 @@ The repository-level `requirements.txt` documents the runtime prerequisites for 
 | File | Purpose |
 | --- | --- |
 | `brand-assets/icono-logo-original-white-on-black.svg` | Unmodified official SVG supplied by the client; used on dark surfaces |
-| `brand-assets/icono-logo-navbar-dark-transparent.svg` | Transparent navbar derivative using the original vector paths in Smoky Black |
+| `brand-assets/icono-logo-navbar-dark-on-floral.svg` | Navbar derivative using the original vector paths in Smoky Black on Floral White |
 
-The navbar derivative removes only the solid background path and changes the light artwork fill to `#11120D`. It does not recreate or alter the logo letterforms.
+The navbar derivative removes the solid background path, changes the light artwork fill to `#11120D`, and uses the navbar's Floral White `#FFFBF4` for the original counter/knockout paths inside the lettering. It does not recreate or alter the logo letterforms.
