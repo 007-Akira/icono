@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { BrandLogo } from "./BrandLogo";
 
 export function IntroOverlay() {
   const [show, setShow] = useState(false);
@@ -12,5 +13,5 @@ export function IntroOverlay() {
     }
   }, []);
   if (!show) return null;
-  return <div className="intro-overlay fixed inset-0 z-[100] grid place-items-center bg-smoke text-floral" aria-hidden="true"><div className="text-center"><p className="intro-mark display text-5xl sm:text-7xl">ICONO</p><p className="eyebrow mt-4 text-bone">Beauty World & Makeover Studio</p></div></div>;
+  return <div className="intro-overlay fixed inset-0 z-[100] grid place-items-center bg-smoke" aria-hidden="true"><div className="intro-mark"><BrandLogo className="h-auto w-64 sm:w-80" /></div></div>;
 }
