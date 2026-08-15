@@ -37,3 +37,9 @@ The repository-level `requirements.txt` documents the runtime prerequisites for 
 | `brand-assets/icono-logo-navbar-dark-on-floral.svg` | Navbar derivative using the original vector paths in Smoky Black on Floral White |
 
 The navbar derivative removes the solid background path, changes the light artwork fill to `#11120D`, and uses the navbar's Floral White `#FFFBF4` for the original counter/knockout paths inside the lettering. It does not recreate or alter the logo letterforms.
+
+## Brochure source
+
+The photographed brochure pages supplied by the client are preserved in `brochure/`, ordered and named by content. They are source references for the service catalogue, not production website imagery.
+
+Some printed benefit language makes medical or guaranteed claims. The website uses conservative cosmetic descriptions instead of reproducing claims about curing acne, treating melasma, preventing wrinkles, or guaranteeing outcomes. Opening hours, additional phone numbers, and credential wording printed in the brochure remain unpublished until separately confirmed as current.
