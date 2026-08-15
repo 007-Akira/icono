@@ -29,6 +29,7 @@ export default function ContactPage() {
             </a>
             <p>{formattedAddress}</p>
             <p>
+              Usual hours:{" "}
               {business.openingHours.length
                 ? business.openingHours.join(" · ")
                 : "Opening hours to be confirmed"}

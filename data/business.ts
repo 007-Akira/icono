@@ -22,8 +22,9 @@ export const business = {
   googleMapsUrl: "https://maps.app.goo.gl/rDkXMyZ7yvirpae67",
   googleMapsEmbedUrl: "https://www.google.com/maps?q=8.9162274%2C76.6349356&z=17&output=embed",
   coordinates: { latitude: 8.9162274, longitude: 76.6349356 },
-  // Keep these empty until the client confirms publishable values.
-  openingHours: [] as string[],
+  // Days are not published until the weekly schedule is confirmed.
+  openingHours: ["9:00 AM – 7:00 PM"],
+  // Keep credentials empty until the client confirms publishable values.
   certifications: [] as string[],
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
 } as const;
