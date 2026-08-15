@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { Service } from "@/data/services";
+import { business } from "@/data/business";
+import { createGeneralWhatsAppUrl } from "@/lib/whatsapp";
 
 export function ServiceMenuSection({ service }: { service: Service }) {
   return (
@@ -10,9 +11,9 @@ export function ServiceMenuSection({ service }: { service: Service }) {
           <section key={group.title} className="mt-12 grid gap-8 border-t border-olive/30 pt-10 md:grid-cols-12">
             <div className="md:col-span-4">
               <h2 className="display text-4xl">{group.title}</h2>
-              <Link href="/contact#appointment" className="eyebrow mt-7 inline-block border-b border-smoke pb-1">
+              <a href={createGeneralWhatsAppUrl(business.whatsapp, `Hello Icono, I would like to ask about ${group.title}.`)} target="_blank" rel="noreferrer" className="eyebrow mt-7 inline-block border-b border-smoke pb-1">
                 Ask about this service
-              </Link>
+              </a>
             </div>
             <div className="md:col-span-7 md:col-start-6">
               {group.items.map((item) => (
