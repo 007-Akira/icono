@@ -25,7 +25,7 @@ export function Navbar() {
         <div className="relative" onMouseLeave={() => setServicesOpen(false)}>
           <button onClick={() => setServicesOpen(v => !v)} onMouseEnter={() => setServicesOpen(true)} aria-expanded={servicesOpen} aria-haspopup="menu" className="eyebrow flex items-center gap-2 py-2">Services <span aria-hidden>⌄</span></button>
           {servicesOpen && <div role="menu" className="absolute left-1/2 top-full w-64 -translate-x-1/2 border border-smoke/10 bg-floral p-3 shadow-xl">
-            {services.map(s => <Link role="menuitem" key={s.slug} href={`/services/${s.slug}`} className="block px-4 py-3 text-sm hover:bg-bone/40">{s.name}</Link>)}
+            {services.map(s => <Link role="menuitem" key={s.slug} href={`/services/${s.slug}`} className="block px-4 py-3 text-sm hover:bg-bone/40">{s.navName}</Link>)}
           </div>}
         </div>
         {links.slice(2).map(link => <Link key={link.href} href={link.href} className={`eyebrow border-b py-2 ${pathname === link.href ? "border-smoke" : "border-transparent hover:border-olive"}`}>{link.label}</Link>)}
@@ -37,7 +37,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-lg flex-col">
         {links.slice(0,2).map(link => <Link key={link.href} href={link.href} onClick={closeMenus} className="display border-b border-floral/20 py-4 text-3xl">{link.label}</Link>)}
         <button className="display flex items-center justify-between border-b border-floral/20 py-4 text-left text-3xl" onClick={() => setServicesOpen(v => !v)} aria-expanded={servicesOpen}>Services <span className="text-xl">{servicesOpen ? "−" : "+"}</span></button>
-        {servicesOpen && <div className="border-b border-floral/20 py-3 pl-4">{services.map(s => <Link key={s.slug} href={`/services/${s.slug}`} onClick={closeMenus} className="block py-3 text-bone">{s.name}</Link>)}</div>}
+        {servicesOpen && <div className="border-b border-floral/20 py-3 pl-4">{services.map(s => <Link key={s.slug} href={`/services/${s.slug}`} onClick={closeMenus} className="block py-3 text-bone">{s.navName}</Link>)}</div>}
         {links.slice(2).map(link => <Link key={link.href} href={link.href} onClick={closeMenus} className="display border-b border-floral/20 py-4 text-3xl">{link.label}</Link>)}
         <a href={whatsappUrl} target="_blank" rel="noreferrer" onClick={closeMenus} className="eyebrow mt-8 bg-floral px-6 py-4 text-center text-sm text-smoke">Enquire on WhatsApp</a>
       </div>
