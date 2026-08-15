@@ -1,0 +1,23 @@
+# ICONO frontend runtime prerequisites
+#
+# This is a Next.js/Node.js project, not a Python project. This file documents
+# the required local tools for collaborators; do not run `pip install -r`.
+# JavaScript packages are installed from package.json/package-lock.json with npm.
+
+Node.js >= 20.9.0
+npm >= 10.0.0
+
+# Application setup (after the production source and package manifests are tracked):
+#   npm install
+#   npm run dev
+#
+# Production verification:
+#   npm run typecheck
+#   npm run lint
+#   npm run build
+#   npm run start
+#
+# Stitch references under design-reference/stitch-exports are standalone HTML.
+# They require no package installation and can be opened directly in a browser.
+# An internet connection is required for their Tailwind CDN, Google Fonts, and
+# temporary remote reference images.

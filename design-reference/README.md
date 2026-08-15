@@ -21,3 +21,9 @@ This directory preserves the original Stitch-generated UI exports supplied for t
 - Do not copy placeholder content into production without client approval.
 - Temporary editorial imagery must not be described as authentic ICONO work or photographs of the actual studio.
 - Shared production components and verified/placeholder-safe content are maintained separately in the Next.js application.
+
+## Viewing the references
+
+No dependency installation or build step is required for these standalone exports. Open any file in `stitch-exports/` directly in a browser. An internet connection is needed because the original exports use Tailwind CDN, Google Fonts, and temporary remote images.
+
+The repository-level `requirements.txt` documents the runtime prerequisites for the production Next.js application. Node dependencies are installed with npm, not pip.
