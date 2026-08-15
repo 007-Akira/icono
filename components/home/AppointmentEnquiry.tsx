@@ -1,5 +1,5 @@
 "use client";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { business } from "@/data/business";
 import { referenceImages } from "@/data/images";
@@ -8,6 +8,26 @@ import { createWhatsAppUrl } from "@/lib/whatsapp";
 
 export function AppointmentEnquiry() {
   const [error, setError] = useState("");
+  const [serviceOpen, setServiceOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
+  const servicePicker = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function closeServicePicker(event: PointerEvent) {
+      if (!servicePicker.current?.contains(event.target as Node)) setServiceOpen(false);
+    }
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setServiceOpen(false);
+    }
+
+    document.addEventListener("pointerdown", closeServicePicker);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeServicePicker);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, []);
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -57,25 +77,56 @@ export function AppointmentEnquiry() {
         <form onSubmit={submit} noValidate className="space-y-7">
           <Field label="Full name" name="name" required />
           <Field label="Phone number" name="phone" type="tel" required />
-          <label className="block">
-            <span className="eyebrow text-olive">Service *</span>
-            <span className="relative mt-2 block">
-              <select
-                className="picker-field service-select"
-                name="service"
-                required
-                defaultValue=""
-              >
-                <option value="" disabled>
-                  Select a service
-                </option>
-                {services.map((s) => (
-                  <option key={s.slug}>{s.title}</option>
-                ))}
-              </select>
-              <PickerIcon type="chevron" />
+          <div className="block" ref={servicePicker}>
+            <span id="service-picker-label" className="eyebrow text-olive">
+              Service *
             </span>
-          </label>
+            <div className="relative mt-2">
+              <input type="hidden" name="service" value={selectedService} />
+              <button
+                type="button"
+                className="picker-field flex items-center text-left"
+                aria-labelledby="service-picker-label service-picker-value"
+                aria-haspopup="listbox"
+                aria-controls="appointment-service-options"
+                aria-expanded={serviceOpen}
+                onClick={() => setServiceOpen((open) => !open)}
+              >
+                <span
+                  id="service-picker-value"
+                  className={selectedService ? "text-smoke" : "text-olive"}
+                >
+                  {selectedService || "Select a service"}
+                </span>
+              </button>
+              <PickerIcon type="chevron" />
+              {serviceOpen ? (
+                <div
+                  id="appointment-service-options"
+                  role="listbox"
+                  aria-labelledby="service-picker-label"
+                  className="absolute inset-x-0 top-[calc(100%+0.5rem)] z-30 max-h-80 overflow-y-auto border border-smoke/10 bg-floral p-3 shadow-xl"
+                >
+                  {services.map((service) => (
+                    <button
+                      type="button"
+                      role="option"
+                      aria-selected={selectedService === service.title}
+                      key={service.slug}
+                      onClick={() => {
+                        setSelectedService(service.title);
+                        setServiceOpen(false);
+                        setError("");
+                      }}
+                      className={`block w-full px-4 py-3 text-left text-sm transition-colors hover:bg-bone/40 ${selectedService === service.title ? "bg-bone/40 font-medium" : ""}`}
+                    >
+                      {service.title}
+                    </button>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          </div>
           <div className="grid gap-7 sm:grid-cols-2">
             <Field label="Preferred date" name="date" type="date" icon="calendar" />
             <Field label="Preferred time" name="time" type="time" icon="clock" />

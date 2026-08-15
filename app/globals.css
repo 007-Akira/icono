@@ -96,14 +96,6 @@ textarea {
   background: #fffbf4;
   outline: none;
 }
-.service-select {
-  appearance: none;
-  cursor: pointer;
-}
-.service-select option {
-  background: #fffbf4;
-  color: #11120d;
-}
 .picker-field::-webkit-calendar-picker-indicator {
   position: absolute;
   right: 0;
