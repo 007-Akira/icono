@@ -1,0 +1,497 @@
+<!-- Design System -->
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ICONO Beauty World</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-container": "#898287",
+                "on-primary-container": "#84847d",
+                "surface": "#fcf8f7",
+                "on-secondary-fixed": "#1d1c13",
+                "tertiary-fixed-dim": "#cdc4ca",
+                "on-primary-fixed": "#1b1c17",
+                "tertiary-fixed": "#e9e0e6",
+                "primary-fixed-dim": "#c8c7be",
+                "on-secondary-container": "#656357",
+                "secondary-container": "#e4e0d1",
+                "surface-container-low": "#f7f3f1",
+                "inverse-on-surface": "#f4f0ee",
+                "on-surface-variant": "#474741",
+                "surface-tint": "#5e5f58",
+                "on-primary-fixed-variant": "#474741",
+                "inverse-primary": "#c8c7be",
+                "error-container": "#ffdad6",
+                "tertiary-container": "#1f1a1e",
+                "on-primary": "#ffffff",
+                "background": "#fcf8f7",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed-variant": "#4b454a",
+                "secondary-fixed": "#e7e2d4",
+                "primary-container": "#1b1c17",
+                "outline-variant": "#c8c7be",
+                "secondary": "#615f53",
+                "on-tertiary-fixed": "#1f1a1e",
+                "surface-container": "#f1edeb",
+                "surface-variant": "#e5e2e0",
+                "surface-bright": "#fcf8f7",
+                "on-secondary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "on-error-container": "#93000a",
+                "inverse-surface": "#31302f",
+                "surface-dim": "#ddd9d8",
+                "primary": "#000000",
+                "tertiary": "#000000",
+                "outline": "#777770",
+                "on-error": "#ffffff",
+                "on-surface": "#1c1b1b",
+                "on-background": "#1c1b1b",
+                "secondary-fixed-dim": "#cac6b9",
+                "on-secondary-fixed-variant": "#49473c",
+                "error": "#ba1a1a",
+                "primary-fixed": "#e4e3da",
+                "surface-container-high": "#ebe7e6",
+                "surface-container-highest": "#e5e2e0"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-desktop": "64px",
+                "margin-mobile": "20px",
+                "gutter": "24px",
+                "container-max": "1440px",
+                "unit": "8px",
+                "section-gap": "120px"
+        },
+        "fontFamily": {
+                "subheading": [
+                        "Playfair Display"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "headline-md-mobile": [
+                        "Playfair Display"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "subheading": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "48px",
+                        {
+                                "lineHeight": "52px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "80px",
+                        {
+                                "lineHeight": "88px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "38px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "22px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for gallery but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg antialiased selection:bg-surface-container-high selection:text-primary">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md border-b border-secondary/20 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto"><div class="flex items-center">
+<a class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-primary" href="#">ICONO</a>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center">
+<ul class="flex gap-8 font-label-caps text-label-caps items-center">
+<li class=""><a class="text-primary border-b border-primary pb-1" href="#">Home</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a></li>
+<li class="relative group py-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 flex items-center gap-1" href="#">Services <span class="material-symbols-outlined text-[16px]">expand_more</span></a>
+<ul class="absolute left-0 mt-2 hidden group-hover:block bg-surface border border-outline/20 py-2 min-w-[200px] shadow-lg">
+<li class=""><a class="block px-4 py-2 text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">Hair</a></li>
+<li class=""><a class="block px-4 py-2 text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">Skin</a></li>
+<li class=""><a class="block px-4 py-2 text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">Bridal &amp; Makeover</a></li>
+<li class=""><a class="block px-4 py-2 text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">Nails</a></li>
+<li class=""><a class="block px-4 py-2 text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">Beauty Treatments</a></li>
+<li class=""><a class="block px-4 py-2 text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" href="#">Speciality Treatments</a></li>
+</ul>
+</li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Gallery</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a></li>
+</ul>
+</nav>
+<div class="flex items-center gap-4">
+<a class="hidden md:inline-block font-label-caps text-label-caps bg-primary text-on-primary px-6 py-3 hover:opacity-70 transition-opacity" href="#book">Book</a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div></div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-end md:items-center px-margin-mobile md:px-margin-desktop pb-margin-mobile md:pb-0 box-border overflow-hidden bg-surface-container">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Beauty, considered." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArln35xIKWKL_nNAnZlLNkP2UypVdhRZxneuSfy8VM0gWCf62Q5QM47Yh5kSKR6bP7l6hTjdRt94iMOTSrzMAib_yZUDZzRQiL2KkFfCIRSwhvLswCV_h7xT8OnuHUYIweOrlGuN8GHm9dMJwlHjRzME9TnlhbJ8ml8pW53QeWlA-BRZrr06xWOMAKDIUsyyLgyK3J3BIhW4-vwaqBIkeO3fGp4SeuKao6lsGHDsZWGjp5rKVvHoMG">
+</div>
+<!-- Gradient Overlay for Text Readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent md:bg-gradient-to-r md:from-background/90 md:via-background/50 md:to-transparent z-0"></div>
+<div class="relative z-10 w-full max-w-container-max mx-auto md:mt-24">
+<div class="max-w-2xl">
+<p class="font-label-caps text-label-caps text-primary mb-6 tracking-widest">ICONO BEAUTY WORLD &amp; MAKEOVER STUDIO</p>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-10 leading-none">Beauty,<br>considered.</h1>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 hover:opacity-70 transition-opacity" href="#services">Explore Services</a>
+<a class="inline-flex items-center justify-center border border-primary text-primary font-label-caps text-label-caps px-8 py-4 hover:bg-surface-container transition-colors" href="#">Enquire on WhatsApp</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Intro -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-background">
+<div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-outline mb-8" data-icon="auto_awesome" style="font-size: 32px;">auto_awesome</span>
+<h2 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-primary mb-8 leading-snug">
+                    Redefining premium beauty and holistic care in the heart of Kollam. A sanctuary for refined aesthetics.
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    At Icono, we believe in the quiet power of meticulously crafted treatments. Moving away from the superficial, we focus on enhancing natural vitality through expert techniques, premium formulations, and an uncompromising attention to detail.
+                </p>
+</div>
+</section>
+<!-- Signature Services (Asymmetric Alternating) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container" id="services">
+<div class="max-w-container-max mx-auto">
+<div class="mb-16 md:mb-24 text-center">
+<p class="font-label-caps text-label-caps text-outline mb-4">OUR EXPERTISE</p>
+<h2 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-primary">Signature Services</h2>
+</div>
+<!-- Service 1: Hair -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center mb-section-gap">
+<div class="md:col-span-7 h-[500px] bg-secondary-fixed relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="A close-up, editorial style photograph of healthy, flowing dark hair being gently styled. The lighting is dramatic yet warm, highlighting the texture and shine of the hair against a soft bone-colored background. The mood is luxurious, meticulous, and professional, aligning with a quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYyo8_5-5SdC2-jbR0c968tlh8oYvRYF8upDkEbIkGr8TBzQgTshcmpXHGZ_R0nQHzxgDsTVq0EnqRvFvyU5RdMq6bUFRwueZpUf2a4_s9tDrC-e7dlmqwAEF3bTjeBzxZBKtymhp0jw-mgZYrDsu0jDaYgiIsRiExHRSdA-VPohQXdzA-ETQIBqFzTUwPpwfN-pzUldkD2YJIJ5ZERe5CnpftJhDpXpSfUr_SwTazxcqzXBc1_aht">
+</div>
+<div class="md:col-span-4 md:col-start-9 pt-8 md:pt-0">
+<h3 class="font-subheading text-subheading text-primary mb-4">Precision Hair Design</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-8">Bespoke cutting, advanced structural coloring, and restorative scalp therapies tailored to your unique canvas.</p>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 hover:text-secondary transition-colors" href="#">Discover Hair</a>
+</div>
+</div>
+<!-- Service 2: Skin -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center mb-section-gap">
+<div class="md:col-span-4 md:col-start-2 pt-8 md:pt-0 order-2 md:order-1">
+<h3 class="font-subheading text-subheading text-primary mb-4">Advanced Skin Science</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-8">Clinical-grade facials, dermal treatments, and holistic regimens designed to illuminate and restore cellular health.</p>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 hover:text-secondary transition-colors" href="#">Discover Skin</a>
+</div>
+<div class="md:col-span-7 md:col-start-6 h-[500px] bg-secondary-fixed relative overflow-hidden order-1 md:order-2">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="A serene, minimalist image showing hands applying a luxurious serum to a woman's glowing cheek. The composition uses negative space elegantly. The color palette features soft off-whites, organic mid-tones, and soft shadows, emphasizing tactility, purity, and scientific skincare." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh5Dorxvhq2yjOjNopmQRAJShZZKXk9lO4LKUvXFZcAtJOoYa_yheW58-XkowU5g6BkbArqgtx1jV4H4WipiV5ggHK6XC5_K6ApKZ9wr9rkx2QUOa2EHKwG74kXjp4wM0XEMldt8bcFi7rIfTiD67-SCx2aNLAkZAOFyqSH43uKsVwHVj_yFSXlioMEKqpjyXKnbjeSWSCTgze4CLr2ZQ5Hy-0nmjqlb7T6jLkfl9FWesGL9Nt0QXr">
+</div>
+</div>
+<!-- Service 3: Bridal -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6 h-[600px] bg-secondary-fixed relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="An elegant, modern bridal portrait. An Indian bride in subtle, refined makeup and contemporary traditional jewelry. The aesthetic avoids harsh lighting, favoring soft, diffused daylight that creates a sophisticated, editorial mood. The background is a clean, textured off-white wall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACrEJHdiBCdLtpDkh_-cBjz0Xa9WO2x2_NPc75yvFrY_O7QC3E9aww3oGxB8tSZNPKTb0PY41Rr9H_07Gt4PwW5dXl7DZMT-MKAslwz9qawtvwvewHsuz_JI-ZsMwizzts-SrpmClAu8RdH4Cfd2uhkKodVIPCiz8RKS8LcvaLUw8bmY2P7XLSt6HpC9r2VKcU7AR1EHUEZG_5z6N4c9EX4QMvLbYEbVEr84Gt1zIM0B5jDkJ_b8dM">
+</div>
+<div class="md:col-span-4 md:col-start-8 pt-8 md:pt-0">
+<h3 class="font-subheading text-subheading text-primary mb-4">Bridal &amp; Makeover</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-8">Editorial-inspired artistry for your most significant moments. We create timeless looks that feel like the most refined version of you.</p>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 hover:text-secondary transition-colors" href="#">View Bridal Portfolio</a>
+</div>
+</div>
+<div class="mt-24 text-center">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 hover:opacity-70 transition-opacity" href="#">View All Services</a>
+</div>
+</div>
+</section>
+<!-- Founder Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-background">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 md:col-start-2 order-2 md:order-1 pt-12 md:pt-0">
+<p class="font-label-caps text-label-caps text-outline mb-6 tracking-widest">FOUNDER · COSMETOLOGIST</p>
+<h2 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-primary mb-6">Meet Latha</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        With over two decades of dedicated practice, Latha brings a clinical precision to the art of beauty. Her philosophy centers on the integrity of the canvas—be it skin or hair—before any aesthetic enhancement.
+                    </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-10">
+                        "True luxury in beauty isn't about masking; it's about revealing. It requires patience, expertise, and an unwavering commitment to quality."
+                    </p>
+<div class="inline-block border border-outline px-4 py-2 font-label-caps text-label-caps text-on-surface-variant">
+                        CERTIFIED IN COSMETOLOGY
+                    </div>
+</div>
+<div class="md:col-span-5 md:col-start-8 order-1 md:order-2">
+<div class="aspect-[3/4] bg-surface-container relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A black and white, highly textured, professional portrait of a female cosmetologist. She exudes confidence and calm expertise. The lighting is dramatic, akin to a high-end magazine profile. The setting is minimal, focusing entirely on her presence and professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlQawWJINAftOaMv3yZ0YxsFUv5M7_kphFvwI9kyG68qP6qm5CFLKZMGgb9U-frydshBFU4TaIG8K1ItM1wxvRJmbZtOsaKIhf6KF-TA26OsVehK7PwtSPieDkGWYqGaW2sVfpi40GBqkzrKg5QilbPjZ3Q1s9Rp_und3_LDeqtkHudZJcZ2OYqfDzoUfB0BxsZFfJhc6I4wxpd-9trA6FD5-6FDTqnv78fRaNccpb39zbnVH2egcb">
+</div>
+</div>
+</div>
+</section>
+<!-- Speciality Treatments (Full Width Image-led) -->
+<section class="py-section-gap bg-surface-container">
+<div class="relative w-full h-[716px] min-h-[500px]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A wide, abstract shot focusing on the tactile nature of beauty products. Swirls of thick, off-white cream against a bone-colored stone surface. The lighting emphasizes the rich, organic texture. The overall mood is architectural, clean, and deeply luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_EP0jkRpIcumkIZVvKW0N2p0ST_LKcxoV9I7p1gIQmVu3gDb6dZBZjKURxmaYH-sPWrLVsWWhYiv3ZpJnNwcfnuxwX2asVXlANmJ19fSTUoX3jZWsGh5PI8ygv8xxleOprtM_Q8k2fjSsA5Py0AB0T91sqDGyzRQ_YXGWhMsmiavag4B1IMIWjNz7hCyZvWwDVUlQHEqbiWEiAjwzsPkO222jDqDrvrjDD9vm1ghfQi2B8cWcd5Qy">
+<div class="absolute inset-0 bg-primary/20"></div>
+<div class="absolute inset-0 flex items-center px-margin-mobile md:px-margin-desktop">
+<div class="max-w-xl bg-background p-8 md:p-16 border border-outline/20">
+<p class="font-label-caps text-label-caps text-outline mb-4">FEATURED TREATMENT</p>
+<h3 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-primary mb-4">Keratin Infusion Therapy</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-8">
+                            A structural reset for compromised hair. Utilizing biomimetic proteins to rebuild bonds, resulting in liquid-like shine and profound resilience.
+                        </p>
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-primary hover:opacity-70 transition-opacity" href="#">
+                            Learn More <span class="material-symbols-outlined" data-icon="arrow_forward" style="font-size: 16px;">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Selected Work (Masonry) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-background">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-primary">Selected Work</h2>
+</div>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 hover:text-secondary transition-colors" href="#">View Full Gallery</a>
+</div>
+<div class="columns-1 sm:columns-2 md:columns-3 gap-gutter space-y-gutter">
+<!-- Image 1 -->
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up editorial shot of a sleek, structured updo hairstyle. The dark hair shines against a pale, bone-colored background. Lighting is sharp, highlighting the meticulous craft of the styling. Quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYyo8_5-5SdC2-jbR0c968tlh8oYvRYF8upDkEbIkGr8TBzQgTshcmpXHGZ_R0nQHzxgDsTVq0EnqRvFvyU5RdMq6bUFRwueZpUf2a4_s9tDrC-e7dlmqwAEF3bTjeBzxZBKtymhp0jw-mgZYrDsu0jDaYgiIsRiExHRSdA-VPohQXdzA-ETQIBqFzTUwPpwfN-pzUldkD2YJIJ5ZERe5CnpftJhDpXpSfUr_SwTazxcqzXBc1_aht">
+</div>
+<!-- Image 2 -->
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A soft-focus image of a woman's face showing flawless, dewy skin makeup. Subtle blush and a glossy lip. The background is a warm, floral white. The mood is fresh, modern, and effortless." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh5Dorxvhq2yjOjNopmQRAJShZZKXk9lO4LKUvXFZcAtJOoYa_yheW58-XkowU5g6BkbArqgtx1jV4H4WipiV5ggHK6XC5_K6ApKZ9wr9rkx2QUOa2EHKwG74kXjp4wM0XEMldt8bcFi7rIfTiD67-SCx2aNLAkZAOFyqSH43uKsVwHVj_yFSXlioMEKqpjyXKnbjeSWSCTgze4CLr2ZQ5Hy-0nmjqlb7T6jLkfl9FWesGL9Nt0QXr">
+</div>
+<!-- Image 3 -->
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A dramatic profile shot of a South Indian bride. Rich gold jewelry contrasts beautifully with a deep smoky black background. The lighting is moody and cinematic, highlighting the intricate details of her makeup and adornments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACrEJHdiBCdLtpDkh_-cBjz0Xa9WO2x2_NPc75yvFrY_O7QC3E9aww3oGxB8tSZNPKTb0PY41Rr9H_07Gt4PwW5dXl7DZMT-MKAslwz9qawtvwvewHsuz_JI-ZsMwizzts-SrpmClAu8RdH4Cfd2uhkKodVIPCiz8RKS8LcvaLUw8bmY2P7XLSt6HpC9r2VKcU7AR1EHUEZG_5z6N4c9EX4QMvLbYEbVEr84Gt1zIM0B5jDkJ_b8dM">
+</div>
+<!-- Image 4 -->
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Abstract macro photography of loose makeup powder in earthy olive and bone tones. The texture is grainy and organic, resembling a minimalist landscape painting. High-end cosmetic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYLw8oppHUMbz107kXj1oOE95B5KE588laC3huxufvs-ADtzAp9q_HQSQ3F_br-c2keWIl9ynzKca2bvLw3GEb0SsUy8UGbWmnvjQ1kxMWprTYb2S_Oh4pYFAvP9q8kLjmrhoUG6Jv898mI4qAKF3N0N8v1Xu9mQRttYycUiOyFlKouqO1Z2Cb1Yku9sRRynogNDur1oO1feCM091GGCFhb7d5VP9g3EgcuaO_onGlZxm-m-NQBrZO">
+</div>
+<!-- Image 5 -->
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A beautifully manicured hand resting near a face, showcasing minimalist nail art and subtle contouring. The composition uses negative space heavily. Tonal layering of beige and off-white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz8wPXsZtytTD4R1sg7C9nrDCz4DMWO4HMfHnb7aNIZ7gr4MBw1FMNKYY_3GwnxHTF_JVjQgQoYUREU25zXDybZp1F9TTCm0dxW9bIPtkWrnmZHW_SehHtIL51RrX0yCG7c7kso5_P9Cyrp8XFOKneypMOrqTIhkW1xAbqUV8KLnxhQ0tiFvAesVds_8yrKcXjkRU_sjJXej13TdP-a4IzKMSnunB1fBdPRCFmBmSRCz86zVZfnuP7">
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container">
+<div class="max-w-4xl mx-auto text-center">
+<div class="flex justify-center gap-1 mb-8 text-primary">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+</div>
+<blockquote class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary leading-tight mb-8">
+                    "An absolute revelation. The attention to detail and the serene atmosphere make it more than a salon; it's a retreat."
+                </blockquote>
+<p class="font-label-caps text-label-caps text-outline tracking-widest">— ANJALI R., KOLLAM</p>
+</div>
+</section>
+<!-- Enquiry Form -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-background" id="book">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32">
+<div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-primary mb-6">Request an Appointment</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md">
+                        Please provide your details below. Our concierge will contact you shortly to confirm your booking and arrange a consultation if required.
+                    </p>
+<div class="w-full h-64 bg-surface-container relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A minimalist still life image of elegant salon tools—a high-end metallic comb and a sleek glass serum bottle—resting on a textured bone-colored tray. Soft, diffused daylight creates subtle shadows. Quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABqxIVYXgohqQlw1otyR3FbqVOQIC3W8v7VkfgN3Lvo7iF_H-oxRsVQUfpwO64wYMROFf1lxeEaaLaeBZxWgDbu61cNqJjG03IxA6hLD2Woztx7qSCnfMHvx3TpegquN3XTeSJTncBq9UVKcgNIQdZRWD4zE96zRo90oKHFIWr3Rj7v5Drd7y5y4FzFLg4EVuVYJCnYZuAhlo7z5i1jQSvf2ev3SUb0qcCTUExWi2nj-uPrkXcy8ZV">
+</div>
+</div>
+<div>
+<form class="space-y-10">
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-outline mb-2" for="name">FULL NAME</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-2 focus:ring-0 focus:border-primary transition-colors font-body-lg text-primary placeholder-outline-variant" id="name" placeholder="Jane Doe" type="text">
+</div>
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-outline mb-2" for="phone">PHONE NUMBER</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-2 focus:ring-0 focus:border-primary transition-colors font-body-lg text-primary placeholder-outline-variant" id="phone" placeholder="+91 00000 00000" type="tel">
+</div>
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-outline mb-2" for="service">SERVICE OF INTEREST</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant py-2 focus:ring-0 focus:border-primary transition-colors font-body-lg text-primary appearance-none" id="service">
+<option disabled="" selected="" value="">Select a category</option>
+<option value="hair">Hair Design</option>
+<option value="skin">Skin Science</option>
+<option value="bridal">Bridal &amp; Makeover</option>
+<option value="treatment">Speciality Treatment</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 top-8 pointer-events-none text-outline" data-icon="expand_more">expand_more</span>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-outline mb-2" for="date">PREFERRED DATE</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-2 focus:ring-0 focus:border-primary transition-colors font-body-lg text-primary text-sm" id="date" type="date">
+</div>
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-outline mb-2" for="time">PREFERRED TIME</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-2 focus:ring-0 focus:border-primary transition-colors font-body-lg text-primary text-sm" id="time" type="time">
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-4 mt-8 hover:opacity-70 transition-opacity" type="submit">Submit Request</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Visit Section -->
+<section class="bg-primary text-on-primary py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-stretch">
+<div class="md:col-span-5 flex flex-col justify-between py-8">
+<div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-surface mb-8">Visit the Studio</h2>
+<div class="mb-12">
+<p class="font-label-caps text-label-caps text-surface/60 mb-2">ADDRESS</p>
+<p class="font-body-lg text-body-lg text-surface">
+                                123 Main Avenue, Polayathode<br>
+                                Kollam, Kerala 691001
+                            </p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-surface/60 mb-2">HOURS</p>
+<ul class="font-body-lg text-body-lg text-surface space-y-2">
+<li class="flex justify-between max-w-xs"><span class="">Mon - Sat</span> <span class="">9:30 AM - 7:00 PM</span></li>
+<li class="flex justify-between max-w-xs"><span class="">Sunday</span> <span class="">By Appointment</span></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 md:mt-0">
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps text-surface border-b border-surface pb-1 hover:text-surface-variant transition-colors" href="#">
+                            Get Directions <span class="material-symbols-outlined" data-icon="north_east" style="font-size: 16px;">north_east</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-7 h-[400px] md:h-auto min-h-[400px] bg-inverse-surface relative overflow-hidden">
+<!-- Map Placeholder -->
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity" data-alt="A stylized, minimalist map showing the location of Kollam, Kerala. The map uses a dark mode color palette with deep charcoal, dark olive lines, and very subtle bone-colored markers to indicate streets and the studio location. High contrast, elegant graphic design style." data-location="Kollam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbB_E-oMOD8KRt1Hy80lXUQlQcDn7tKxDXMSj6qny7520LvLX2bT6xU1ckRgt3wayutXyDv-Ous0zWQaoEnQj2OkJlTKE1BSy689qgMTlAyE6gx5KaRIzbtgrDhRyeRXM96mrTo1KJ1exAimxOJ-F1r6oz8e2qLuHhOS956WPegNt_YmHAe_WnNGwZWNZVoX4ZQ22aJaL0j1vJY-9TFY7b2SZS56YIP7LqirXEnNNFaiBwJEH4cKyt">
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-primary-container w-full none grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-12 flex flex-col md:flex-row justify-between items-center md:items-end gap-8 border-t border-surface/20 pt-8 mt-12">
+<div>
+<span class="font-display-lg text-display-lg text-surface dark:text-on-primary-fixed block mb-4">ICONO</span>
+<p class="font-body-sm text-body-sm text-surface dark:text-on-primary-fixed opacity-60">© 2024 ICONO BEAUTY WORLD. ALL RIGHTS RESERVED.</p>
+</div>
+<ul class="flex flex-wrap gap-6 font-body-sm text-body-sm">
+<li class=""><a class="text-surface/60 hover:text-surface transition-colors duration-300" href="#">Privacy Policy</a></li>
+<li class=""><a class="text-surface/60 hover:text-surface transition-colors duration-300" href="#">Terms of Service</a></li>
+<li class=""><a class="text-surface/60 hover:text-surface transition-colors duration-300" href="#">Instagram</a></li>
+<li class=""><a class="text-surface/60 hover:text-surface transition-colors duration-300" href="#">WhatsApp</a></li>
+</ul>
+</div>
+</footer>
+<script>
+        // Simple script to add slight background opacity to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+
+
+</body></html>
+

@@ -1,0 +1,288 @@
+<!-- Home — Refined Editorial Luxury -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ICONO - Hair Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-container": "#898287",
+                        "on-primary-container": "#84847d",
+                        "surface": "#fcf8f7",
+                        "on-secondary-fixed": "#1d1c13",
+                        "tertiary-fixed-dim": "#cdc4ca",
+                        "on-primary-fixed": "#1b1c17",
+                        "tertiary-fixed": "#e9e0e6",
+                        "primary-fixed-dim": "#c8c7be",
+                        "on-secondary-container": "#656357",
+                        "secondary-container": "#e4e0d1",
+                        "surface-container-low": "#f7f3f1",
+                        "inverse-on-surface": "#f4f0ee",
+                        "on-surface-variant": "#474741",
+                        "surface-tint": "#5e5f58",
+                        "on-primary-fixed-variant": "#474741",
+                        "inverse-primary": "#c8c7be",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#1f1a1e",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf8f7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#4b454a",
+                        "secondary-fixed": "#e7e2d4",
+                        "primary-container": "#1b1c17",
+                        "outline-variant": "#c8c7be",
+                        "secondary": "#615f53",
+                        "on-tertiary-fixed": "#1f1a1e",
+                        "surface-container": "#f1edeb",
+                        "surface-variant": "#e5e2e0",
+                        "surface-bright": "#fcf8f7",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#31302f",
+                        "surface-dim": "#ddd9d8",
+                        "primary": "#000000",
+                        "tertiary": "#000000",
+                        "outline": "#777770",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1c1b1b",
+                        "on-background": "#1c1b1b",
+                        "secondary-fixed-dim": "#cac6b9",
+                        "on-secondary-fixed-variant": "#49473c",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#e4e3da",
+                        "surface-container-high": "#ebe7e6",
+                        "surface-container-highest": "#e5e2e0"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "section-gap": "120px"
+                    },
+                    fontFamily: {
+                        "subheading": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-md-mobile": ["Playfair Display"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "subheading": ["24px", { lineHeight: "32px", fontWeight: "400" }],
+                        "display-lg-mobile": ["48px", { lineHeight: "52px", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "headline-md": ["40px", { lineHeight: "48px", fontWeight: "600" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.15em", fontWeight: "600" }],
+                        "display-lg": ["80px", { lineHeight: "88px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-md-mobile": ["32px", { lineHeight: "38px", fontWeight: "600" }],
+                        "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #FFFBF4;
+            color: #000000;
+        }
+        .bg-bone { background-color: #D8CFBC; }
+        .border-olive-drab { border-color: rgba(86, 84, 73, 0.2); }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md dark:bg-surface-container-highest/60 border-b border-secondary/20 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-primary dark:text-on-primary-fixed" href="#">ICONO</a>
+<nav class="hidden md:flex gap-8 items-center font-label-caps text-label-caps text-on-surface-variant ml-auto mr-8">
+<a class="hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="text-primary border-b border-primary pb-1" href="#">Services</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">Gallery</a>
+<a class="hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 hover:opacity-70 transition-opacity">Book</button>
+</div>
+</header>
+<main class="flex-grow pt-[100px] md:pt-[120px]">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 md:col-start-1 space-y-6 z-10">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Services</p>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary">HAIR</h1>
+<p class="font-subheading text-subheading text-on-surface-variant">Cut · Colour · Styling · Treatments</p>
+</div>
+<div class="md:col-span-7 md:col-start-6 mt-12 md:mt-0 relative">
+<div class="bg-bone absolute inset-0 -translate-x-4 translate-y-4 md:-translate-x-8 md:translate-y-8 -z-10"></div>
+<img class="w-full h-auto object-cover aspect-[4/5] md:aspect-auto" data-alt="A sophisticated editorial image of a woman receiving premium hair styling in a high-end salon. Soft, warm natural light illuminating dark, lustrous hair. The setting is minimal, elegant, and luxurious, featuring soft beige walls and dark wood accents. The mood is quiet luxury, emphasizing expert craftsmanship and beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiS6sSWvfCqZMHm5WxktZJlu35N-vq_Z3PI8ZQJYFXuRArtUe9pPn-hLEfUVBqCb8rJNCFHqlgQ4WjjYJZs6ygsHdGyONHebEY8vEs0qeiA5aKc9Km3mJWYWmHKGTEPabwMTD3tpFLDpvTv55CuvjWQ8zcwQ2iugPX0DBJcKSEoAKJCVYRj3KylBWPpcI5vZglpa-IqbHl9vSMYwB_aZRM54eqNdc1G6XT5-V_p-Db8Hf2DTi7PX4X">
+</div>
+</div>
+</section>
+<!-- Intro -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 md:col-start-3 text-center">
+<p class="font-body-lg text-body-lg text-on-surface-variant md:px-12">
+                        Experience precision and artistry. At ICONO, our hair services are tailored to enhance your natural beauty. From foundational cuts to transformative color and restorative treatments, our experts deliver bespoke solutions in a serene environment.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Service Sections (Editorial List) -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-section-gap space-y-24">
+<!-- Hair Cuts & Styling -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 border-t border-olive-drab pt-4">
+<h2 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-primary">Cuts &amp; Styling</h2>
+</div>
+<div class="md:col-span-8 border-t border-olive-drab pt-4">
+<ul class="space-y-6">
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Women's Haircut</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹1,500</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Hair Trim</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹800</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Blow Dry</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹700</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Hair Styling</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹1,200</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Hair Colour -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 border-t border-olive-drab pt-4">
+<h2 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-primary">Colour</h2>
+</div>
+<div class="md:col-span-8 border-t border-olive-drab pt-4">
+<ul class="space-y-6">
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Global Colour</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹4,500</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Root Touch-Up</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹1,800</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Highlights</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹5,000</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Balayage</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹6,500</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Hair Treatments -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-4 border-t border-olive-drab pt-4">
+<h2 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-primary">Treatments</h2>
+</div>
+<div class="md:col-span-8 border-t border-olive-drab pt-4">
+<ul class="space-y-6">
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Hair Spa</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹1,500</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Keratin Treatment</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹6,000</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Smoothening</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹5,500</span>
+</li>
+<li class="flex justify-between items-baseline border-b border-olive-drab border-dashed pb-4">
+<span class="font-body-lg text-body-lg text-primary">Repair Treatment</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">From ₹2,500</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-bone py-section-gap">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-headline-md-mobile text-headline-md-mobile md:font-headline-md md:text-headline-md text-primary mb-8">Ready for your next look?</h2>
+<button class="border border-primary text-primary px-8 py-4 font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-colors duration-300">Enquire on WhatsApp</button>
+</div>
+</section>
+<!-- Browse Other Services -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-section-gap">
+<h3 class="font-subheading text-subheading text-primary border-b border-olive-drab pb-4 mb-12">Explore More Services</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<a class="group block relative overflow-hidden bg-bone" href="#">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100 mix-blend-multiply" data-alt="Editorial close-up of a South Asian woman receiving a premium skin treatment. Soft lighting, focus on skin texture and luxury skincare products. Warm beige and floral white tones. Quiet luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh5Dorxvhq2yjOjNopmQRAJShZZKXk9lO4LKUvXFZcAtJOoYa_yheW58-XkowU5g6BkbArqgtx1jV4H4WipiV5ggHK6XC5_K6ApKZ9wr9rkx2QUOa2EHKwG74kXjp4wM0XEMldt8bcFi7rIfTiD67-SCx2aNLAkZAOFyqSH43uKsVwHVj_yFSXlioMEKqpjyXKnbjeSWSCTgze4CLr2ZQ5Hy-0nmjqlb7T6jLkfl9FWesGL9Nt0QXr">
+</div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h4 class="font-headline-md-mobile text-headline-md-mobile text-primary bg-surface/80 backdrop-blur-sm inline-block px-4 py-2">Skin</h4>
+</div>
+</a>
+<a class="group block relative overflow-hidden bg-bone mt-0 md:mt-12" href="#">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100 mix-blend-multiply" data-alt="Modern South Asian bridal beauty editorial. Sophisticated styling, not overly traditional, contemporary Indian bridal makeup and hair. Warm, high-end atmosphere. High contrast editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACrEJHdiBCdLtpDkh_-cBjz0Xa9WO2x2_NPc75yvFrY_O7QC3E9aww3oGxB8tSZNPKTb0PY41Rr9H_07Gt4PwW5dXl7DZMT-MKAslwz9qawtvwvewHsuz_JI-ZsMwizzts-SrpmClAu8RdH4Cfd2uhkKodVIPCiz8RKS8LcvaLUw8bmY2P7XLSt6HpC9r2VKcU7AR1EHUEZG_5z6N4c9EX4QMvLbYEbVEr84Gt1zIM0B5jDkJ_b8dM">
+</div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h4 class="font-headline-md-mobile text-headline-md-mobile text-primary bg-surface/80 backdrop-blur-sm inline-block px-4 py-2">Bridal</h4>
+</div>
+</a>
+<a class="group block relative overflow-hidden bg-bone mt-0 md:mt-24" href="#">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100 mix-blend-multiply" data-alt="Close up editorial shot of elegant manicured nails resting on fine textured fabric. Neutral tones, sophisticated styling. Lighting is soft and directional, highlighting the gloss of the nails and the texture of the fabric. Luxury minimal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIeg_jEPIoy1dy63EkAzgYHGFAeBWTu4YvlbfLhKXB3aBypexp2Rw-V0vaN4CS0D3Aga64QCcWgDsdA8IuScGxwLYUZTjnuPMyqII1YfoVmvm0egLCLch5KaJNYaH036fFxZwILc5vMxVKEa8TFKcSkL85Ny_uSqRwf7anOiof7aPESHcJr_ZbfjdczORpqbWLoQXrdZ62zHt1zu7GQuaw6fh7yYkzX9RVX7RXXsxPdotetLbzkBAJ">
+</div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h4 class="font-headline-md-mobile text-headline-md-mobile text-primary bg-surface/80 backdrop-blur-sm inline-block px-4 py-2">Nails</h4>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-primary dark:bg-primary-container text-surface dark:text-on-primary-fixed w-full">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="md:col-span-4 flex flex-col justify-between">
+<a class="font-display-lg text-display-lg text-surface dark:text-on-primary-fixed block mb-12" href="#">ICONO</a>
+<p class="font-body-sm text-body-sm text-surface/60">© 2024 ICONO BEAUTY WORLD. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="md:col-span-8 flex flex-col md:flex-row justify-end items-start md:items-end gap-8 md:gap-16 font-body-sm text-body-sm">
+<a class="text-surface/60 hover:text-surface transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="text-surface/60 hover:text-surface transition-colors duration-300" href="#">Terms of Service</a>
+<a class="text-surface/60 hover:text-surface transition-colors duration-300" href="#">Instagram</a>
+<a class="text-surface/60 hover:text-surface transition-colors duration-300" href="#">WhatsApp</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>
+
