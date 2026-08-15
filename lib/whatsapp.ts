@@ -20,3 +20,8 @@ export function createWhatsAppUrl(number: string, data: EnquiryData) {
   if (!normalizedNumber) return null;
   return `https://wa.me/${normalizedNumber}?text=${encodeURIComponent(buildWhatsAppMessage(data))}`;
 }
+
+export function createGeneralWhatsAppUrl(number: string, message = "Hello Icono, I would like to enquire about your services.") {
+  const normalizedNumber = number.replace(/\D/g, "");
+  return `https://wa.me/${normalizedNumber}?text=${encodeURIComponent(message)}`;
+}
