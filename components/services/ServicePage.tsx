@@ -1,7 +1,12 @@
-import { Service } from "@/data/services";
+import Link from "next/link";
+import { ServicePageData } from "@/data/services";
 import { ServiceHero } from "./ServiceHero";
-import { ServiceMenuSection } from "./ServiceMenuSection";
+import { ServiceIntro } from "./ServiceIntro";
+import { ServiceCategory } from "./ServiceCategory";
+import { ServiceVisualBreak } from "./ServiceVisualBreak";
+import { ServiceGuidanceCTA } from "./ServiceGuidanceCTA";
 import { BrowseOtherServices } from "./BrowseOtherServices";
-import { ServiceCTA } from "./ServiceCTA";
 
-export function ServicePage({ service }: { service: Service }) { return <><ServiceHero service={service} /><section className="py-section"><div className="page-shell grid gap-8 md:grid-cols-12"><p className="eyebrow text-olive md:col-span-3">A considered approach</p><p className="display text-3xl leading-snug md:col-span-7 md:col-start-5 sm:text-4xl">{service.intro}</p></div></section><ServiceMenuSection service={service} /><BrowseOtherServices current={service.slug} /><ServiceCTA serviceName={service.name} /></>; }
+export function ServicePage({ service }: { service: ServicePageData }) {
+  return <><ServiceHero service={service} /><ServiceIntro>{service.intro}</ServiceIntro><div className="page-shell space-y-20 pb-20 md:space-y-28 md:pb-28">{service.categories.map((category, index) => <div key={category.title} className="space-y-20 md:space-y-28"><ServiceCategory category={category} number={String(index + 1).padStart(2, "0")} />{service.visualBreaks[index] && index < 2 ? <ServiceVisualBreak {...service.visualBreaks[index]} /> : null}</div>)}</div><ServiceGuidanceCTA category={service.title} /><BrowseOtherServices current={service} /><div className="page-shell flex flex-wrap justify-center gap-8 pb-20"><Link href="/gallery" className="eyebrow border-b border-smoke pb-1">View Gallery</Link><Link href="/contact" className="eyebrow border-b border-smoke pb-1">Contact Icono</Link></div></>;
+}

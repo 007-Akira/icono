@@ -1,4 +1,0 @@
-import { business } from "@/data/business";
-import { createGeneralWhatsAppUrl } from "@/lib/whatsapp";
-
-export function ServiceCTA({ serviceName }: { serviceName: string }) { const url = createGeneralWhatsAppUrl(business.whatsapp, `Hello Icono, I would like to enquire about ${serviceName}.`); return <section className="bg-smoke py-section text-center text-floral"><div className="page-shell"><p className="eyebrow text-bone">Service Enquiry</p><h2 className="display mx-auto mt-5 max-w-3xl text-5xl">Interested in {serviceName.toLowerCase()}?</h2><p className="mx-auto mt-6 max-w-xl text-bone">Tell Icono what you are looking for. Appointments are confirmed manually after a response on WhatsApp.</p><a href={url} target="_blank" rel="noreferrer" className="eyebrow mt-9 inline-flex bg-floral px-7 py-4 text-smoke">Enquire on WhatsApp</a></div></section>; }

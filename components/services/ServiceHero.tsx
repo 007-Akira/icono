@@ -1,4 +1,6 @@
 import Image from "next/image";
-import { Service } from "@/data/services";
+import { ServicePageData } from "@/data/services";
 
-export function ServiceHero({ service }: { service: Service }) { return <section className="relative min-h-[78svh] overflow-hidden pt-20"><Image src={service.image} alt={`${service.name} editorial reference`} fill priority sizes="100vw" className="object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-smoke/75 via-smoke/10 to-transparent"/><div className="page-shell relative flex min-h-[calc(78svh-5rem)] items-end pb-14 text-floral"><div><p className="eyebrow text-bone">{service.eyebrow}</p><h1 className="display mt-4 text-[clamp(4rem,10vw,8rem)] uppercase leading-none">{service.name}</h1></div></div></section>; }
+export function ServiceHero({ service }: { service: ServicePageData }) {
+  return <section className="page-shell grid items-center gap-12 pb-20 pt-36 md:grid-cols-12 md:pb-28 md:pt-44"><div className="z-10 md:col-span-5"><p className="eyebrow text-olive">{service.eyebrow}</p><h1 className="display mt-5 text-[clamp(3.5rem,7vw,6.5rem)] font-semibold uppercase leading-[.95]">{service.title}</h1><p className="display mt-6 text-2xl leading-snug text-olive">{service.subtitle}</p></div><div className="relative md:col-span-7"><div className="absolute inset-0 -z-10 -translate-x-4 translate-y-4 bg-bone md:-translate-x-8 md:translate-y-8" /><div className="relative aspect-[4/5] overflow-hidden md:aspect-[5/4]"><Image src={service.heroImage} alt={`${service.title} editorial service reference`} fill priority sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" /></div></div></section>;
+}
