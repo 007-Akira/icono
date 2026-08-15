@@ -69,36 +69,39 @@ textarea {
   box-shadow: none;
 }
 .intro-overlay {
-  animation: intro-overlay 1.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: intro-overlay 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.intro-mark {
-  animation: intro-mark 1.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+.intro-content {
+  animation: intro-content 2.4s ease both;
+}
+.intro-wordmark-crop {
+  aspect-ratio: 1149 / 390;
+}
+.intro-wordmark-image {
+  transform: translateY(-7.8%);
 }
 @keyframes intro-overlay {
-  0%,
-  76% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-2%);
-  }
-}
-@keyframes intro-mark {
   0% {
-    opacity: 0;
-    transform: translateY(18px) scale(0.98);
+    transform: translateX(100%);
   }
   22%,
-  58% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  64% {
+    transform: translateX(0);
   }
-  78%,
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes intro-content {
+  0% {
+    opacity: 0;
+  }
+  20%,
+  67% {
+    opacity: 1;
+  }
   100% {
     opacity: 0;
-    transform: translateY(-18px) scale(1.01);
   }
 }
 @keyframes intro-overlay-reduced {
@@ -110,7 +113,7 @@ textarea {
     opacity: 0;
   }
 }
-@keyframes intro-mark-reduced {
+@keyframes intro-content-reduced {
   0% {
     opacity: 0;
   }
@@ -136,7 +139,7 @@ textarea {
   .intro-overlay {
     animation: intro-overlay-reduced 0.32s ease-out forwards !important;
   }
-  .intro-mark {
-    animation: intro-mark-reduced 0.32s ease-out both !important;
+  .intro-content {
+    animation: intro-content-reduced 0.32s ease-out both !important;
   }
 }
