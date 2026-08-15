@@ -3,9 +3,9 @@
 ## 1. Project Overview
 
 **Business:** Icono Beauty World & Makeover Studio  
-**Owner / Face of the Brand:** Ms. Revathy  
+**Owner / Face of the Brand:** Ms. Latha  
 **Business Type:** Salon / Beauty & Makeover Studio  
-**Primary Goal:** Build a premium, luxury-focused informational website that presents the salon, services, Ms. Revathy's expertise, previous work, customer trust, and drives enquiries through WhatsApp.
+**Primary Goal:** Build a premium, luxury-focused informational website that presents the salon, services, Ms. Latha's expertise, previous work, customer trust, and drives enquiries through WhatsApp.
 
 The website is not intended to be a full online booking platform. The appointment flow will collect enquiry details and pass them into WhatsApp for the customer to send to the salon.
 
@@ -41,7 +41,7 @@ The site should avoid looking like a generic beauty parlour template.
 - Premium visual hierarchy
 - Warm neutral colour balance
 - Strong conversion to WhatsApp
-- A clear founder story centered around Ms. Revathy
+- A clear founder story centered around Ms. Latha
 
 ---
 
@@ -116,9 +116,9 @@ Exact fonts are not yet locked.
 
 The website will use three clearly separated types of imagery.
 
-### A. Ms. Revathy — Authentic Founder Photography
+### A. Ms. Latha — Authentic Founder Photography
 
-Ms. Revathy is the owner and face of Icono.
+Ms. Latha is the owner and face of Icono.
 
 Her images should be treated as important brand assets rather than repeated everywhere.
 
@@ -274,11 +274,11 @@ Speciality treatments should receive stronger visual treatment than ordinary ser
 
 ---
 
-### 6.5 Meet Ms. Revathy
+### 6.5 Meet Ms. Latha
 
 One of the most important sections of the entire site.
 
-Ms. Revathy should be positioned as the professional authority behind Icono.
+Ms. Latha should be positioned as the professional authority behind Icono.
 
 Possible structure:
 
@@ -288,7 +288,7 @@ Small label:
 
 Large heading:
 
-**Ms. Revathy**
+**Ms. Latha**
 
 Content:
 
@@ -460,8 +460,8 @@ The About page should be founder-led.
 
 1. Intro / brand statement
 2. Story of Icono
-3. Large Ms. Revathy portrait
-4. About Ms. Revathy
+3. Large Ms. Latha portrait
+4. About Ms. Latha
 5. Cosmetology certification / credentials
 6. Professional philosophy
 7. Specialities / areas of focus
@@ -617,7 +617,7 @@ Exact keyword targeting should be finalized after the service list is received.
 Depending on the final site/content:
 
 - LocalBusiness / BeautySalon schema
-- Person schema for Ms. Revathy where appropriate
+- Person schema for Ms. Latha where appropriate
 - BreadcrumbList
 - Service-related structured information where valid
 
@@ -718,7 +718,7 @@ Before final copy and implementation, collect:
 - Instagram
 - Other social links
 
-### Ms. Revathy
+### Ms. Latha
 
 - Preferred full name/title
 - Short biography
@@ -768,7 +768,7 @@ HOME
 ├── Hero
 ├── Icono Experience
 ├── Signature Services
-├── Meet Ms. Revathy
+├── Meet Ms. Latha
 ├── Featured Treatments
 ├── Selected Work
 ├── Reviews
@@ -779,7 +779,7 @@ HOME
 ABOUT
 ├── About Icono
 ├── Founder Story
-├── Ms. Revathy
+├── Ms. Latha
 ├── Cosmetology Credentials
 ├── Philosophy / Expertise
 └── CTA
@@ -819,7 +819,7 @@ Premium first impression
         ↓
 Understand Icono's services
         ↓
-Meet Ms. Revathy and establish professional trust
+Meet Ms. Latha and establish professional trust
         ↓
 See real Icono work
         ↓
@@ -851,7 +851,7 @@ Salon confirms manually
 - Reviews presentation
 - Basic technical/on-page SEO
 - Premium imagery
-- Ms. Revathy founder/profile presentation
+- Ms. Latha founder/profile presentation
 
 ### Not Intended as Part of Current Product
 
@@ -907,7 +907,7 @@ The site should communicate:
 
 > **Real founder. Real work. Curated editorial atmosphere.**
 
-Authenticity should come from Ms. Revathy, Icono's real work, location, credentials, and reviews.
+Authenticity should come from Ms. Latha, Icono's real work, location, credentials, and reviews.
 
 AI/licensed imagery should support the atmosphere and visual narrative without pretending to represent real Icono clients, staff, salon interiors, certifications, or previous work.
 
@@ -919,7 +919,7 @@ AI/licensed imagery should support the atmosphere and visual narrative without p
 
 - Luxury/premium positioning
 - Founder-led brand presentation
-- Ms. Revathy will appear prominently
+- Ms. Latha will appear prominently
 - Cosmetology credential information will be included
 - Authentic previous work will form the gallery
 - AI/free/licensed imagery will support editorial visuals
@@ -934,7 +934,7 @@ AI/licensed imagery should support the atmosphere and visual narrative without p
 
 - Exact service list
 - Specialty treatments
-- Exact Ms. Revathy biography
+- Exact Ms. Latha biography
 - Exact cosmetology qualification
 - Logo assets
 - Final typography
@@ -975,4 +975,4 @@ Reuse functional ideas where useful, while completely adapting the visual langua
 
 ## 25. One-Line Product Definition
 
-> **Icono's website is a premium, editorial, founder-led salon experience centered on Ms. Revathy's expertise, authentic Icono transformations, curated beauty imagery, customer trust, and frictionless WhatsApp enquiries.**
+> **Icono's website is a premium, editorial, founder-led salon experience centered on Ms. Latha's expertise, authentic Icono transformations, curated beauty imagery, customer trust, and frictionless WhatsApp enquiries.**
