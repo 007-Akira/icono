@@ -18,23 +18,52 @@ export default function ContactPage() {
             <p className="eyebrow text-olive">Contact</p>
             <h1 className="display mt-4 text-6xl sm:text-8xl">Let&apos;s talk beauty.</h1>
           </div>
-          <div className="flex flex-col gap-5 text-olive md:col-span-4 md:col-start-9">
-            <a href={`tel:${business.phonePrimary}`}>{business.phoneDisplay}</a>
-            <a href={`mailto:${business.email}`}>{business.email}</a>
-            <a href={createGeneralWhatsAppUrl(business.whatsapp)} target="_blank" rel="noreferrer">
-              Chat on WhatsApp
-            </a>
-            <a href={business.instagramUrl} target="_blank" rel="noreferrer">
-              @{business.instagram}
-            </a>
-            <p>{formattedAddress}</p>
-            <p>
-              Usual hours:{" "}
-              {business.openingHours.length
-                ? business.openingHours.join(" · ")
-                : "Opening hours to be confirmed"}
-            </p>
-          </div>
+          <dl className="border-t border-olive/25 text-olive md:col-span-5 md:col-start-8">
+            <div className="grid gap-2 border-b border-olive/25 py-5 sm:grid-cols-[9rem_1fr]">
+              <dt className="eyebrow">Phone</dt>
+              <dd>
+                <a href={`tel:${business.phonePrimary}`}>{business.phoneDisplay}</a>
+              </dd>
+            </div>
+            <div className="grid gap-2 border-b border-olive/25 py-5 sm:grid-cols-[9rem_1fr]">
+              <dt className="eyebrow">Email us at</dt>
+              <dd className="break-all">
+                <a href={`mailto:${business.email}`}>{business.email}</a>
+              </dd>
+            </div>
+            <div className="grid gap-2 border-b border-olive/25 py-5 sm:grid-cols-[9rem_1fr]">
+              <dt className="eyebrow">WhatsApp</dt>
+              <dd>
+                <a
+                  href={createGeneralWhatsAppUrl(business.whatsapp)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Start a conversation
+                </a>
+              </dd>
+            </div>
+            <div className="grid gap-2 border-b border-olive/25 py-5 sm:grid-cols-[9rem_1fr]">
+              <dt className="eyebrow">Instagram</dt>
+              <dd>
+                <a href={business.instagramUrl} target="_blank" rel="noreferrer">
+                  @{business.instagram}
+                </a>
+              </dd>
+            </div>
+            <div className="grid gap-2 border-b border-olive/25 py-5 sm:grid-cols-[9rem_1fr]">
+              <dt className="eyebrow">Find us</dt>
+              <dd>{formattedAddress}</dd>
+            </div>
+            <div className="grid gap-2 border-b border-olive/25 py-5 sm:grid-cols-[9rem_1fr]">
+              <dt className="eyebrow">Usual hours</dt>
+              <dd>
+                {business.openingHours.length
+                  ? business.openingHours.join(" · ")
+                  : "Opening hours to be confirmed"}
+              </dd>
+            </div>
+          </dl>
         </div>
       </section>
       <AppointmentEnquiry />
