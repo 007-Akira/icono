@@ -1,7 +1,7 @@
 export const business = {
   name: "Icono Beauty World & Makeover Studio",
   shortName: "Icono",
-  owner: "Latha S",
+  owner: "Ms. Revathy",
   email: "iconobeautyworld@gmail.com",
   phonePrimary: "+919447978174",
   phoneDisplay: "+91 94479 78174",
