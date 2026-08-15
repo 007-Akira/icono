@@ -19,7 +19,7 @@ export function Navbar() {
   const whatsappUrl = createGeneralWhatsAppUrl(business.whatsapp);
   return <header className="fixed inset-x-0 top-0 z-50 border-b border-smoke/10 bg-floral/90 backdrop-blur-md">
     <div className="page-shell flex h-20 items-center justify-between">
-      <Link href="/" aria-label="Icono home"><BrandLogo className="h-14 w-28 sm:w-32" /></Link>
+      <Link href="/" aria-label="Icono home"><BrandLogo variant="navbar" className="h-14 w-28 sm:w-32" /></Link>
       <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
         {links.slice(0,2).map(link => <Link key={link.href} href={link.href} className={`eyebrow border-b py-2 ${pathname === link.href ? "border-smoke" : "border-transparent hover:border-olive"}`}>{link.label}</Link>)}
         <div className="relative" onMouseLeave={() => setServicesOpen(false)}>
