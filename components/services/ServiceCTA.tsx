@@ -1,0 +1,3 @@
+import { CTAButton } from "@/components/shared/CTAButton";
+
+export function ServiceCTA({ serviceName }: { serviceName: string }) { return <section className="bg-smoke py-section text-center text-floral"><div className="page-shell"><p className="eyebrow text-bone">Appointment Enquiry</p><h2 className="display mx-auto mt-5 max-w-3xl text-5xl">Interested in {serviceName.toLowerCase()}?</h2><p className="mx-auto mt-6 max-w-xl text-bone">Tell ICONO what you are looking for. Your appointment is confirmed manually after a response on WhatsApp.</p><CTAButton href="/contact#appointment" variant="light" className="mt-9">Request an appointment</CTAButton></div></section>; }
