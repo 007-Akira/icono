@@ -7,8 +7,9 @@ export function BrandIntro() {
           Professional beauty, hair and makeover services in Kollam.
         </h2>
         <p className="mx-auto mt-8 max-w-2xl leading-8 text-olive">
-          Icono offers hair, facial, bridal, makeup and grooming services from its studio near TKM
-          Arts College in Karicode.
+          Icono offers hair, facial, bridal, makeup and grooming services from its studio near
+          <br />
+          TKM&nbsp;Arts College in Karicode.
         </p>
       </div>
     </section>
