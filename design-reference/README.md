@@ -28,3 +28,12 @@ This directory preserves the original Stitch-generated UI exports supplied for t
 No dependency installation or build step is required for these standalone exports. Open any file in `stitch-exports/` directly in a browser. An internet connection is needed because the original exports use Tailwind CDN, Google Fonts, and temporary remote images.
 
 The repository-level `requirements.txt` documents the runtime prerequisites for the production Next.js application. Node dependencies are installed with npm, not pip.
+
+## Brand assets
+
+| File | Purpose |
+| --- | --- |
+| `brand-assets/icono-logo-original-white-on-black.svg` | Unmodified official SVG supplied by the client; used on dark surfaces |
+| `brand-assets/icono-logo-navbar-dark-transparent.svg` | Transparent navbar derivative using the original vector paths in Smoky Black |
+
+The navbar derivative removes only the solid background path and changes the light artwork fill to `#11120D`. It does not recreate or alter the logo letterforms.
