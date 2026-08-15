@@ -68,63 +68,6 @@ textarea {
   outline: none;
   box-shadow: none;
 }
-.intro-overlay {
-  animation: intro-overlay 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.intro-content {
-  animation: intro-content 2.4s ease both;
-}
-.intro-wordmark-crop {
-  aspect-ratio: 1149 / 390;
-}
-.intro-wordmark-image {
-  transform: translateY(-7.8%);
-}
-@keyframes intro-overlay {
-  0% {
-    transform: translateX(100%);
-  }
-  22%,
-  64% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes intro-content {
-  0% {
-    opacity: 0;
-  }
-  20%,
-  67% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes intro-overlay-reduced {
-  0%,
-  70% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes intro-content-reduced {
-  0% {
-    opacity: 0;
-  }
-  20%,
-  65% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -135,11 +78,5 @@ textarea {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-  .intro-overlay {
-    animation: intro-overlay-reduced 0.32s ease-out forwards !important;
-  }
-  .intro-content {
-    animation: intro-content-reduced 0.32s ease-out both !important;
   }
 }

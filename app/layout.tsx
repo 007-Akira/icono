@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { IntroOverlay } from "@/components/shared/IntroOverlay";
 import { MobileContactBar } from "@/components/layout/MobileContactBar";
 import { business, formattedAddress } from "@/data/business";
 
@@ -54,7 +53,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
         />
-        <IntroOverlay />
         <Navbar />
         <main>{children}</main>
         <Footer />
