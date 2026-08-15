@@ -1,29 +1,55 @@
 "use client";
 import { useEffect, useState } from "react";
-import { BrandLogo } from "./BrandLogo";
+
+const SESSION_KEY = "icono-intro-played";
+const STANDARD_DURATION_MS = 1450;
+const REDUCED_MOTION_DURATION_MS = 320;
+
+type IntroPhase = "checking" | "playing" | "hidden";
 
 export function IntroOverlay() {
-  const [show, setShow] = useState(false);
+  const [phase, setPhase] = useState<IntroPhase>("checking");
+
   useEffect(() => {
-    if (!sessionStorage.getItem("icono-intro-seen")) {
-      sessionStorage.setItem("icono-intro-seen", "true");
-      const showTimer = window.setTimeout(() => setShow(true), 0);
-      const hideTimer = window.setTimeout(() => setShow(false), 1450);
-      return () => {
-        window.clearTimeout(showTimer);
-        window.clearTimeout(hideTimer);
-      };
+    const hasPlayed = sessionStorage.getItem(SESSION_KEY) === "true";
+    let hideTimer: number | undefined;
+
+    if (!hasPlayed) {
+      sessionStorage.setItem(SESSION_KEY, "true");
     }
+
+    const animationFrame = window.requestAnimationFrame(() => {
+      if (hasPlayed) {
+        setPhase("hidden");
+        return;
+      }
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      setPhase("playing");
+      hideTimer = window.setTimeout(
+        () => setPhase("hidden"),
+        prefersReducedMotion ? REDUCED_MOTION_DURATION_MS : STANDARD_DURATION_MS,
+      );
+    });
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+      if (hideTimer) window.clearTimeout(hideTimer);
+    };
   }, []);
-  if (!show) return null;
+
+  if (phase === "hidden") return null;
+
   return (
     <div
-      className="intro-overlay fixed inset-0 z-[100] grid place-items-center bg-smoke"
+      className={`fixed inset-0 z-[100] grid place-items-center bg-smoke ${phase === "playing" ? "intro-overlay" : ""}`}
       aria-hidden="true"
     >
-      <div className="intro-mark">
-        <BrandLogo className="h-auto w-64 sm:w-80" />
-      </div>
+      <span
+        className={`display text-6xl lowercase text-floral sm:text-8xl ${phase === "playing" ? "intro-mark" : "opacity-0"}`}
+      >
+        icono
+      </span>
     </div>
   );
 }
