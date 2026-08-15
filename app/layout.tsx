@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const localBusiness = { "@context": "https://schema.org", "@type": "BeautySalon", name: business.name, telephone: business.phonePrimary, email: business.email, address: { "@type": "PostalAddress", streetAddress: `${business.address.line1}, ${business.address.area}`, addressLocality: business.address.city, addressRegion: business.address.state, addressCountry: business.address.country }, sameAs: [business.instagramUrl], description: `Professional beauty, hair and makeover services at ${formattedAddress}.` };
+  const localBusiness = { "@context": "https://schema.org", "@type": "BeautySalon", name: business.name, telephone: business.phonePrimary, email: business.email, address: { "@type": "PostalAddress", streetAddress: `${business.address.line1}, ${business.address.area}`, addressLocality: business.address.city, addressRegion: business.address.state, addressCountry: business.address.country }, geo: { "@type": "GeoCoordinates", latitude: business.coordinates.latitude, longitude: business.coordinates.longitude }, hasMap: business.googleMapsUrl, sameAs: [business.instagramUrl], description: `Professional beauty, hair and makeover services at ${formattedAddress}.` };
   return (
     <html lang="en"><body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} /><IntroOverlay /><Navbar /><main>{children}</main><Footer /><MobileContactBar /></body></html>
   );
