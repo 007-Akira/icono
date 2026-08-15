@@ -59,18 +59,26 @@ export function AppointmentEnquiry() {
           <Field label="Phone number" name="phone" type="tel" required />
           <label className="block">
             <span className="eyebrow text-olive">Service *</span>
-            <select className="field" name="service" required defaultValue="">
-              <option value="" disabled>
-                Select a service
-              </option>
-              {services.map((s) => (
-                <option key={s.slug}>{s.title}</option>
-              ))}
-            </select>
+            <span className="relative mt-2 block">
+              <select
+                className="picker-field service-select"
+                name="service"
+                required
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Select a service
+                </option>
+                {services.map((s) => (
+                  <option key={s.slug}>{s.title}</option>
+                ))}
+              </select>
+              <PickerIcon type="chevron" />
+            </span>
           </label>
           <div className="grid gap-7 sm:grid-cols-2">
-            <Field label="Preferred date" name="date" type="date" />
-            <Field label="Preferred time" name="time" type="time" />
+            <Field label="Preferred date" name="date" type="date" icon="calendar" />
+            <Field label="Preferred time" name="time" type="time" icon="clock" />
           </div>
           <label className="block">
             <span className="eyebrow text-olive">Message</span>
@@ -94,11 +102,13 @@ function Field({
   name,
   type = "text",
   required = false,
+  icon,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
+  icon?: "calendar" | "clock";
 }) {
   return (
     <label className="block">
@@ -106,7 +116,49 @@ function Field({
         {label}
         {required ? " *" : ""}
       </span>
-      <input className="field" name={name} type={type} required={required} />
+      {icon ? (
+        <span className="relative mt-2 block">
+          <input className="picker-field" name={name} type={type} required={required} />
+          <PickerIcon type={icon} />
+        </span>
+      ) : (
+        <input className="field" name={name} type={type} required={required} />
+      )}
     </label>
+  );
+}
+
+function PickerIcon({ type }: { type: "chevron" | "calendar" | "clock" }) {
+  if (type === "chevron") {
+    return (
+      <span
+        className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-olive"
+        aria-hidden
+      >
+        ⌄
+      </span>
+    );
+  }
+
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className="pointer-events-none absolute right-4 top-1/2 size-5 -translate-y-1/2 text-olive"
+      aria-hidden="true"
+    >
+      {type === "calendar" ? (
+        <>
+          <path d="M6.5 3.5v3M17.5 3.5v3M4 9h16M5.5 5h13A1.5 1.5 0 0 1 20 6.5v12a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-12A1.5 1.5 0 0 1 5.5 5Z" />
+        </>
+      ) : (
+        <>
+          <circle cx="12" cy="12" r="8.5" />
+          <path d="M12 7.5V12l3 2" />
+        </>
+      )}
+    </svg>
   );
 }
