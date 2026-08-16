@@ -36,7 +36,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href === "/" ? homeHref : link.href}
-              className={`eyebrow border-b py-2 ${pathname === link.href ? "border-smoke" : "border-transparent hover:border-olive"}`}
+              className={`display text-lg border-b py-2 ${pathname === link.href ? "border-smoke" : "border-transparent hover:border-olive"}`}
             >
               {link.label}
             </Link>
@@ -47,9 +47,9 @@ export function Navbar() {
               onMouseEnter={() => setServicesOpen(true)}
               aria-expanded={servicesOpen}
               aria-haspopup="menu"
-              className="eyebrow flex items-center gap-2 py-2"
+              className="display text-lg flex items-center gap-2 py-2"
             >
-              Services <span aria-hidden>⌄</span>
+              Services
             </button>
             {servicesOpen && (
               <div
@@ -73,7 +73,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`eyebrow border-b py-2 ${pathname === link.href ? "border-smoke" : "border-transparent hover:border-olive"}`}
+              className={`display text-lg border-b py-2 ${pathname === link.href ? "border-smoke" : "border-transparent hover:border-olive"}`}
             >
               {link.label}
             </Link>
@@ -82,22 +82,33 @@ export function Navbar() {
             href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="eyebrow bg-smoke px-5 py-3 text-floral"
+            className="display text-lg bg-smoke px-5 py-3 text-floral"
           >
             Enquire
           </a>
         </nav>
-        <button
-          className="grid size-11 place-items-center lg:hidden"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-menu"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          <span className="text-2xl" aria-hidden>
-            {mobileOpen ? "×" : "☰"}
-          </span>
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="display bg-smoke px-4 py-2 text-sm text-floral"
+          >
+            Enquire
+          </a>
+
+          <button
+            className="grid size-11 place-items-center"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          >
+            <span className="text-2xl" aria-hidden>
+              {mobileOpen ? "×" : "☰"}
+            </span>
+          </button>
+        </div>
       </div>
       {mobileOpen && (
         <nav
@@ -111,13 +122,13 @@ export function Navbar() {
                 key={link.href}
                 href={link.href === "/" ? homeHref : link.href}
                 onClick={closeMenus}
-                className={`eyebrow flex items-center justify-between border-b border-smoke/10 py-3.5 ${pathname === link.href ? "text-smoke" : "text-olive"}`}
+                className={`display text-lg flex items-center justify-between border-b border-smoke/10 py-3.5 ${pathname === link.href ? "text-smoke" : "text-olive"}`}
               >
                 {link.label} <span aria-hidden>→</span>
               </Link>
             ))}
             <button
-              className="eyebrow flex w-full items-center justify-between border-b border-smoke/10 py-3.5 text-left text-olive"
+              className="display text-lg flex w-full items-center justify-between border-b border-smoke/10 py-3.5 text-left text-olive"
               onClick={() => setServicesOpen((v) => !v)}
               aria-expanded={servicesOpen}
             >
@@ -142,20 +153,11 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={closeMenus}
-                className={`eyebrow flex items-center justify-between border-b border-smoke/10 py-3.5 ${pathname === link.href ? "text-smoke" : "text-olive"}`}
+                className={`display text-lg flex items-center justify-between border-b border-smoke/10 py-3.5 ${pathname === link.href ? "text-smoke" : "text-olive"}`}
               >
                 {link.label} <span aria-hidden>→</span>
               </Link>
             ))}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={closeMenus}
-              className="eyebrow mt-4 flex items-center justify-center bg-smoke px-5 py-3.5 text-floral"
-            >
-              Enquire on WhatsApp
-            </a>
           </div>
         </nav>
       )}
