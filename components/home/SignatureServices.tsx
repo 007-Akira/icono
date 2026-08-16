@@ -32,9 +32,15 @@ export function SignatureServices() {
                 <p className="mt-5 leading-7 text-olive">{service.intro}</p>
                 <Link
                   href={`/services/${service.slug}`}
-                  className="eyebrow mt-7 inline-block border-b border-smoke pb-1"
+                  className="eyebrow group mt-7 inline-flex items-center gap-2 border-b border-smoke pb-1"
                 >
                   Discover {service.navName}
+                  <span
+                    aria-hidden
+                    className="transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
                 </Link>
               </div>
             </article>

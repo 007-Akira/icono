@@ -64,7 +64,15 @@ export function BrowseOtherServices({ current }: { current: ServicePageData }) {
               <div className="absolute inset-0 bg-gradient-to-t from-smoke/75 via-transparent to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-7 text-floral">
                 <h3 className="display text-3xl">{service.title}</h3>
-                <p className="mt-2 text-sm text-bone">Discover services</p>
+                <p className="mt-2 inline-flex items-center gap-2 text-sm text-bone">
+                  Discover services
+                  <span
+                    aria-hidden
+                    className="transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </p>
               </div>
             </div>
           </Link>
