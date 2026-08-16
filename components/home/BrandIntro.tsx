@@ -36,7 +36,6 @@ export function BrandIntro() {
       <div className="page-shell relative z-10 grid gap-10 lg:grid-cols-12 lg:gap-16">
         <div className="hidden pt-4 lg:col-span-5 lg:block">
           <p className="eyebrow text-olive">01 — Icono</p>
-          <p className="eyebrow mt-5 text-olive">Karicode · Kollam</p>
           <div
             className={`mt-8 h-px origin-left bg-olive/55 transition-transform duration-700 ease-out ${revealed ? "scale-x-100" : "scale-x-0"}`}
           />
@@ -49,7 +48,6 @@ export function BrandIntro() {
             <p className="eyebrow max-w-xl text-olive">
               Beauty World &amp; Makeover Studio · Karicode, Kollam
             </p>
-            <p className="eyebrow mt-4 text-olive lg:hidden">Karicode · Kollam</p>
             <div
               className={`mt-6 h-px origin-left bg-olive/55 transition-transform duration-700 ease-out lg:hidden ${revealed ? "scale-x-100" : "scale-x-0"}`}
             />
