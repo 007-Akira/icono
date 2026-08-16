@@ -45,7 +45,8 @@ export function BrandIntro() {
           <div
             className={`transition-all duration-700 ease-out ${revealed ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
           >
-            <p className="eyebrow max-w-xl text-olive">
+            <p className="eyebrow text-olive lg:hidden">01 — Icono</p>
+            <p className="eyebrow mt-5 max-w-xl text-olive lg:mt-0">
               Beauty World &amp; Makeover Studio · Karicode, Kollam
             </p>
             <div
