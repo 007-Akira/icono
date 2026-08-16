@@ -152,9 +152,9 @@ export function Navbar() {
               target="_blank"
               rel="noreferrer"
               onClick={closeMenus}
-              className="eyebrow mt-4 flex items-center justify-between bg-smoke px-5 py-3.5 text-floral"
+              className="eyebrow mt-4 flex items-center justify-center bg-smoke px-5 py-3.5 text-floral"
             >
-              Enquire on WhatsApp <span aria-hidden>↗</span>
+              Enquire on WhatsApp
             </a>
           </div>
         </nav>
