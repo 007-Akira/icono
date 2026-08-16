@@ -117,8 +117,8 @@ export const services: ServicePageData[] = [
             "A salon service intended to create a smoother, straighter and more manageable finish.",
           ),
           item(
-            "Hair Plastia",
-            "A salon conditioning and smoothing service; suitability can be discussed before booking.",
+            "Nano Plastia",
+            "Also known as Hair Plastia, this is a salon conditioning and smoothing service; suitability can be discussed before booking.",
           ),
           item(
             "Volumizing",
@@ -476,10 +476,6 @@ export const services: ServicePageData[] = [
           item(
             "Schwarzkopf Body Spa",
             "A brochure-listed cosmetic body-care service using Schwarzkopf products.",
-          ),
-          item(
-            "Body Polishing",
-            "A cosmetic body-care service focused on a smooth, refreshed-looking finish.",
           ),
         ],
       },
