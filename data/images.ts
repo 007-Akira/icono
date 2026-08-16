@@ -1,7 +1,6 @@
 const editorial = "/images/editorial";
 
 export const referenceImages = {
-  hero: `${editorial}/home-hero.webp`,
   hair: `${editorial}/hair-service.webp`,
   skin: `${editorial}/skin-facial-service.webp`,
   bridal: `${editorial}/bridal-makeup-service.webp`,
