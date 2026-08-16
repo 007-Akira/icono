@@ -1,6 +1,10 @@
 import { business, formattedAddress } from "@/data/business";
 import { createGeneralWhatsAppUrl } from "@/lib/whatsapp";
 import { SectionLabel } from "@/components/shared/SectionLabel";
+import { ContactIcon } from "@/components/shared/ContactIcon";
+
+const contactButtonClass =
+  "inline-flex items-center gap-2.5 border border-floral px-5 py-3 text-floral transition-colors hover:bg-floral hover:text-smoke";
 
 export function VisitIcono() {
   return (
@@ -29,29 +33,37 @@ export function VisitIcono() {
                 href={business.googleMapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="border border-floral px-5 py-3"
+                className={contactButtonClass}
               >
+                <ContactIcon name="location" />
                 Get Directions
               </a>
             ) : null}
-            <a href={`tel:${business.phonePrimary}`} className="border border-floral px-5 py-3">
+            <a href={`tel:${business.phonePrimary}`} className={contactButtonClass}>
+              <ContactIcon name="phone" />
               Call Icono
             </a>
             <a
               href={createGeneralWhatsAppUrl(business.whatsapp)}
               target="_blank"
               rel="noreferrer"
-              className="border border-floral px-5 py-3"
+              className={contactButtonClass}
             >
+              <ContactIcon name="whatsapp" />
               Chat on WhatsApp
             </a>
             <a
               href={business.instagramUrl}
               target="_blank"
               rel="noreferrer"
-              className="border border-floral px-5 py-3"
+              className={contactButtonClass}
             >
+              <ContactIcon name="instagram" />
               Instagram
+            </a>
+            <a href={`mailto:${business.email}`} className={contactButtonClass}>
+              <ContactIcon name="email" />
+              Email Icono
             </a>
           </div>
           {!business.googleMapsUrl ? (

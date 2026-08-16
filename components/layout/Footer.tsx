@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/shared/BrandLogo";
+import { ContactIcon } from "@/components/shared/ContactIcon";
 import { business, formattedAddress } from "@/data/business";
 import { createGeneralWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -31,14 +32,45 @@ export function Footer() {
         <div className="md:col-span-2">
           <p className="eyebrow mb-5 text-bone">Connect</p>
           <div className="flex flex-col gap-3 text-sm text-bone">
-            <a href={createGeneralWhatsAppUrl(business.whatsapp)} target="_blank" rel="noreferrer">
+            <a
+              href={createGeneralWhatsAppUrl(business.whatsapp)}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2.5 transition-colors hover:text-floral"
+            >
+              <ContactIcon name="whatsapp" />
               WhatsApp
             </a>
-            <a href={business.instagramUrl} target="_blank" rel="noreferrer">
+            <a
+              href={business.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2.5 transition-colors hover:text-floral"
+            >
+              <ContactIcon name="instagram" />
               Instagram
             </a>
-            <a href={`tel:${business.phonePrimary}`}>{business.phoneDisplay}</a>
-            <a href={business.googleMapsUrl} target="_blank" rel="noreferrer">
+            <a
+              href={`mailto:${business.email}`}
+              className="flex items-center gap-2.5 transition-colors hover:text-floral"
+            >
+              <ContactIcon name="email" />
+              Email
+            </a>
+            <a
+              href={`tel:${business.phonePrimary}`}
+              className="flex items-center gap-2.5 transition-colors hover:text-floral"
+            >
+              <ContactIcon name="phone" />
+              {business.phoneDisplay}
+            </a>
+            <a
+              href={business.googleMapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2.5 transition-colors hover:text-floral"
+            >
+              <ContactIcon name="location" />
               Directions
             </a>
           </div>
