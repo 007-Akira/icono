@@ -6,7 +6,7 @@ import { createGeneralWhatsAppUrl } from "@/lib/whatsapp";
 
 export function Footer() {
   return (
-    <footer className="bg-smoke pb-24 pt-16 text-floral lg:pb-16">
+    <footer className="bg-smoke pb-16 pt-16 text-floral">
       <div className="page-shell grid gap-12 md:grid-cols-12">
         <div className="md:col-span-4">
           <Link href="/#top" aria-label="Icono home — return to top">

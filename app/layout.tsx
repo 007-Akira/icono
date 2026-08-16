@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { MobileContactBar } from "@/components/layout/MobileContactBar";
 import { business, formattedAddress } from "@/data/business";
 
 export const metadata: Metadata = {
@@ -56,7 +55,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <MobileContactBar />
       </body>
     </html>
   );
