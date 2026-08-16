@@ -41,9 +41,9 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-smoke/10 bg-floral/90 backdrop-blur-md">
       <div className="page-shell flex h-20 items-center justify-between">
         <Link
-          href={pageHref(pathname)}
-          onClick={(event) => handlePageLink(event, pathname)}
-          aria-label="Return to the top of this page"
+          href={pageHref("/")}
+          onClick={(event) => handlePageLink(event, "/")}
+          aria-label="Icono home — return to the top"
         >
           <BrandLogo variant="navbar" className="h-14 w-28 sm:w-32" />
         </Link>
