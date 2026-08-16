@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { services } from "@/data/services";
 import { business } from "@/data/business";
 import { createGeneralWhatsAppUrl } from "@/lib/whatsapp";
@@ -18,13 +18,6 @@ export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const menuButton = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [mobileOpen]);
   const closeMenus = () => {
     setMobileOpen(false);
     setServicesOpen(false);
@@ -95,7 +88,6 @@ export function Navbar() {
           </a>
         </nav>
         <button
-          ref={menuButton}
           className="grid size-11 place-items-center lg:hidden"
           onClick={() => setMobileOpen((v) => !v)}
           aria-expanded={mobileOpen}
@@ -111,36 +103,36 @@ export function Navbar() {
         <nav
           id="mobile-menu"
           aria-label="Mobile navigation"
-          className="fixed inset-x-0 top-20 h-[calc(100dvh-5rem)] overflow-y-auto bg-smoke px-6 py-10 text-floral lg:hidden"
+          className="absolute inset-x-0 top-full max-h-[calc(100dvh-5rem)] overflow-y-auto border-b border-smoke/10 bg-floral shadow-[0_18px_40px_rgba(17,18,13,0.12)] lg:hidden"
         >
-          <div className="mx-auto flex max-w-lg flex-col">
+          <div className="page-shell py-4">
             {links.slice(0, 2).map((link) => (
               <Link
                 key={link.href}
                 href={link.href === "/" ? homeHref : link.href}
                 onClick={closeMenus}
-                className="display border-b border-floral/20 py-4 text-3xl"
+                className={`eyebrow flex items-center justify-between border-b border-smoke/10 py-3.5 ${pathname === link.href ? "text-smoke" : "text-olive"}`}
               >
-                {link.label}
+                {link.label} <span aria-hidden>→</span>
               </Link>
             ))}
             <button
-              className="display flex items-center justify-between border-b border-floral/20 py-4 text-left text-3xl"
+              className="eyebrow flex w-full items-center justify-between border-b border-smoke/10 py-3.5 text-left text-olive"
               onClick={() => setServicesOpen((v) => !v)}
               aria-expanded={servicesOpen}
             >
-              Services <span className="text-xl">{servicesOpen ? "−" : "+"}</span>
+              Services <span className="text-base font-normal">{servicesOpen ? "−" : "+"}</span>
             </button>
             {servicesOpen && (
-              <div className="border-b border-floral/20 py-3 pl-4">
+              <div className="grid border-b border-smoke/10 bg-bone/30 px-3 py-2 sm:grid-cols-2 sm:gap-x-6">
                 {services.map((s) => (
                   <Link
                     key={s.slug}
                     href={`/services/${s.slug}`}
                     onClick={closeMenus}
-                    className="block py-3 text-bone"
+                    className="flex items-center justify-between border-b border-smoke/10 py-2.5 text-sm text-olive last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0"
                   >
-                    {s.navName}
+                    {s.navName} <span aria-hidden>→</span>
                   </Link>
                 ))}
               </div>
@@ -150,9 +142,9 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={closeMenus}
-                className="display border-b border-floral/20 py-4 text-3xl"
+                className={`eyebrow flex items-center justify-between border-b border-smoke/10 py-3.5 ${pathname === link.href ? "text-smoke" : "text-olive"}`}
               >
-                {link.label}
+                {link.label} <span aria-hidden>→</span>
               </Link>
             ))}
             <a
@@ -160,9 +152,9 @@ export function Navbar() {
               target="_blank"
               rel="noreferrer"
               onClick={closeMenus}
-              className="eyebrow mt-8 bg-floral px-6 py-4 text-center text-sm text-smoke"
+              className="eyebrow mt-4 flex items-center justify-between bg-smoke px-5 py-3.5 text-floral"
             >
-              Enquire on WhatsApp
+              Enquire on WhatsApp <span aria-hidden>↗</span>
             </a>
           </div>
         </nav>
