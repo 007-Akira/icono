@@ -13,11 +13,6 @@ export const metadata: Metadata = {
   },
   description:
     "Icono Beauty World & Makeover Studio in Karicode, Kollam offers professional hair, beauty, facial, bridal and makeover services. Enquire directly through WhatsApp.",
-  icons: {
-    // Use the official high-contrast wordmark for browser tabs on every route.
-    icon: [{ url: "/brand/icono-logo-navbar-dark-on-floral.svg", type: "image/svg+xml" }],
-    shortcut: "/brand/icono-logo-navbar-dark-on-floral.svg",
-  },
   openGraph: {
     title: "Icono Beauty World & Makeover Studio | Salon in Kollam",
     description:
