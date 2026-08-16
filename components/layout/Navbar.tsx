@@ -22,28 +22,37 @@ export function Navbar() {
     setMobileOpen(false);
     setServicesOpen(false);
   };
-  const scrollToTop = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
+  const pageHref = (targetPath: string) => `${targetPath === "/" ? "/" : targetPath}#top`;
+  const handlePageLink = (event: MouseEvent<HTMLAnchorElement>, targetPath: string) => {
     closeMenus();
 
+    // New routes use their #top destination. If the route is already open,
+    // handle the scroll directly because Next.js does not remount the page.
+    if (pathname !== targetPath) return;
+    event.preventDefault();
+
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    const scrollContainer = document.scrollingElement ?? document.documentElement;
+    scrollContainer.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
   };
   const whatsappUrl = createGeneralWhatsAppUrl(business.whatsapp);
-  const homeHref = pathname === "/" ? "#top" : "/#top";
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-smoke/10 bg-floral/90 backdrop-blur-md">
       <div className="page-shell flex h-20 items-center justify-between">
-        <Link href="#top" onClick={scrollToTop} aria-label="Return to the top of this page">
+        <Link
+          href={pageHref(pathname)}
+          onClick={(event) => handlePageLink(event, pathname)}
+          aria-label="Return to the top of this page"
+        >
           <BrandLogo variant="navbar" className="h-14 w-28 sm:w-32" />
         </Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
           {links.slice(0, 2).map((link) => (
             <Link
               key={link.href}
-              href={link.href === "/" ? homeHref : link.href}
-              onClick={link.href === "/" && pathname === "/" ? scrollToTop : undefined}
+              href={pageHref(link.href)}
+              onClick={(event) => handlePageLink(event, link.href)}
               className={`display text-lg border-b py-2 ${pathname === link.href ? "border-smoke" : "border-transparent hover:border-olive"}`}
             >
               {link.label}
@@ -68,7 +77,8 @@ export function Navbar() {
                   <Link
                     role="menuitem"
                     key={s.slug}
-                    href={`/services/${s.slug}`}
+                    href={pageHref(`/services/${s.slug}`)}
+                    onClick={(event) => handlePageLink(event, `/services/${s.slug}`)}
                     className="block px-4 py-3 text-sm hover:bg-bone/40"
                   >
                     {s.navName}
@@ -80,7 +90,8 @@ export function Navbar() {
           {links.slice(2).map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              href={pageHref(link.href)}
+              onClick={(event) => handlePageLink(event, link.href)}
               className={`display text-lg border-b py-2 ${pathname === link.href ? "border-smoke" : "border-transparent hover:border-olive"}`}
             >
               {link.label}
@@ -128,8 +139,8 @@ export function Navbar() {
             {links.slice(0, 2).map((link) => (
               <Link
                 key={link.href}
-                href={link.href === "/" ? homeHref : link.href}
-                onClick={link.href === "/" && pathname === "/" ? scrollToTop : () => closeMenus()}
+                href={pageHref(link.href)}
+                onClick={(event) => handlePageLink(event, link.href)}
                 className={`display text-lg flex items-center justify-between border-b border-smoke/10 py-3.5 ${pathname === link.href ? "text-smoke" : "text-olive"}`}
               >
                 {link.label} <span aria-hidden>→</span>
@@ -147,8 +158,8 @@ export function Navbar() {
                 {services.map((s) => (
                   <Link
                     key={s.slug}
-                    href={`/services/${s.slug}`}
-                    onClick={closeMenus}
+                    href={pageHref(`/services/${s.slug}`)}
+                    onClick={(event) => handlePageLink(event, `/services/${s.slug}`)}
                     className="flex items-center justify-between border-b border-smoke/10 py-2.5 text-sm text-olive last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0"
                   >
                     {s.navName} <span aria-hidden>→</span>
@@ -159,8 +170,8 @@ export function Navbar() {
             {links.slice(2).map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
-                onClick={closeMenus}
+                href={pageHref(link.href)}
+                onClick={(event) => handlePageLink(event, link.href)}
                 className={`display text-lg flex items-center justify-between border-b border-smoke/10 py-3.5 ${pathname === link.href ? "text-smoke" : "text-olive"}`}
               >
                 {link.label} <span aria-hidden>→</span>
