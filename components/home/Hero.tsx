@@ -4,27 +4,47 @@ import { CTAButton } from "@/components/shared/CTAButton";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[92svh] items-end overflow-hidden pt-20 sm:items-center">
+    <section className="relative flex min-h-[92svh] items-center overflow-hidden pt-20">
+      {/* Desktop retains the complete two-panel composition. */}
       <Image
         src={referenceImages.hero}
-        alt="Editorial beauty portrait used as temporary visual reference"
+        alt="Beauty portrait beside an editorial salon styling scene"
         fill
         priority
-        sizes="100vw"
-        className="object-cover object-[62%_center]"
+        sizes="(min-width: 640px) 100vw, 0px"
+        className="hidden object-cover object-center sm:block"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-floral via-floral/20 to-transparent sm:bg-gradient-to-r sm:from-floral sm:via-floral/55 sm:to-transparent" />
-      <div className="page-shell relative w-full pb-14 sm:pb-0">
-        <div className="max-w-2xl">
-          <p className="eyebrow mb-6">ICONO Beauty World & Makeover Studio</p>
-          <h1 className="display text-[clamp(3.6rem,8vw,7rem)] font-semibold leading-[.92]">
-            Beauty,
-            <br />
-            considered.
+
+      {/* On phones, each half receives equal time instead of losing one image to cropping. */}
+      <Image
+        src="/images/editorial/home-hero-portrait.webp"
+        alt="Editorial beauty portrait"
+        fill
+        priority
+        sizes="(max-width: 639px) 100vw, 0px"
+        className="hero-mobile-primary object-cover object-center sm:hidden"
+      />
+      <Image
+        src="/images/editorial/home-hero-studio.webp"
+        alt="Stylist finishing a client’s hair"
+        fill
+        sizes="(max-width: 639px) 100vw, 0px"
+        className="hero-mobile-secondary object-cover object-center sm:hidden"
+      />
+
+      <div className="absolute inset-0 bg-smoke/30 sm:bg-smoke/25" />
+      <div className="page-shell relative w-full py-14 text-center text-floral">
+        <div className="mx-auto max-w-5xl">
+          <p className="eyebrow mb-7">ICONO Beauty World &amp; Makeover Studio</p>
+          <h1 className="display text-[clamp(3.4rem,7.5vw,7.5rem)] font-semibold leading-[0.94] text-balance">
+            <em className="font-normal">Beauty</em>, shaped with{" "}
+            <em className="font-normal">intention.</em>
           </h1>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <CTAButton href="#services">Explore Services</CTAButton>
-            <CTAButton href="#appointment" variant="outline">
+          <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+            <CTAButton href="#services" variant="light">
+              Explore Services
+            </CTAButton>
+            <CTAButton href="#appointment" variant="outlineLight">
               Enquire on WhatsApp
             </CTAButton>
           </div>

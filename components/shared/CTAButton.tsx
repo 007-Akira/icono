@@ -8,7 +8,7 @@ export function CTAButton({
 }: {
   href: string;
   children: React.ReactNode;
-  variant?: "dark" | "light" | "outline";
+  variant?: "dark" | "light" | "outline" | "outlineLight";
   className?: string;
 }) {
   const styles =
@@ -16,7 +16,9 @@ export function CTAButton({
       ? "bg-smoke text-floral border-smoke"
       : variant === "light"
         ? "bg-floral text-smoke border-floral"
-        : "border-smoke text-smoke hover:bg-smoke hover:text-floral";
+        : variant === "outlineLight"
+          ? "border-floral text-floral hover:bg-floral hover:text-smoke"
+          : "border-smoke text-smoke hover:bg-smoke hover:text-floral";
   return (
     <Link
       href={href}

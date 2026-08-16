@@ -61,6 +61,45 @@ textarea {
 .service-browser::-webkit-scrollbar {
   display: none;
 }
+@keyframes hero-mobile-primary {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hero-mobile-secondary {
+  0%,
+  45% {
+    opacity: 0;
+  }
+  50%,
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.hero-mobile-primary,
+.hero-mobile-secondary {
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  will-change: opacity;
+}
+.hero-mobile-primary {
+  animation-name: hero-mobile-primary;
+}
+.hero-mobile-secondary {
+  animation-name: hero-mobile-secondary;
+}
 .field {
   width: 100%;
   border: 0;
@@ -114,5 +153,11 @@ textarea {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  .hero-mobile-primary {
+    opacity: 1;
+  }
+  .hero-mobile-secondary {
+    opacity: 0;
   }
 }
