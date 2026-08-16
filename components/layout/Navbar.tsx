@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { type MouseEvent, useState } from "react";
 import { services } from "@/data/services";
 import { business } from "@/data/business";
 import { createGeneralWhatsAppUrl } from "@/lib/whatsapp";
@@ -22,13 +22,20 @@ export function Navbar() {
     setMobileOpen(false);
     setServicesOpen(false);
   };
+  const scrollToTop = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    closeMenus();
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  };
   const whatsappUrl = createGeneralWhatsAppUrl(business.whatsapp);
   const homeHref = pathname === "/" ? "#top" : "/#top";
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-smoke/10 bg-floral/90 backdrop-blur-md">
       <div className="page-shell flex h-20 items-center justify-between">
-        <Link href={homeHref} aria-label="Icono home — return to top">
+        <Link href="#top" onClick={scrollToTop} aria-label="Return to the top of this page">
           <BrandLogo variant="navbar" className="h-14 w-28 sm:w-32" />
         </Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
@@ -36,6 +43,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href === "/" ? homeHref : link.href}
+              onClick={link.href === "/" && pathname === "/" ? scrollToTop : undefined}
               className={`display text-lg border-b py-2 ${pathname === link.href ? "border-smoke" : "border-transparent hover:border-olive"}`}
             >
               {link.label}
@@ -121,7 +129,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href === "/" ? homeHref : link.href}
-                onClick={closeMenus}
+                onClick={link.href === "/" && pathname === "/" ? scrollToTop : () => closeMenus()}
                 className={`display text-lg flex items-center justify-between border-b border-smoke/10 py-3.5 ${pathname === link.href ? "text-smoke" : "text-olive"}`}
               >
                 {link.label} <span aria-hidden>→</span>
