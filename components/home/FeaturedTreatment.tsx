@@ -7,15 +7,17 @@ const featuredServices = [
   {
     name: "Pigmentation Treatment",
     description:
-      "Salon care for clients concerned about uneven-looking tone or visible pigmentation.",
+      "A cosmetic salon-care option for clients concerned about uneven-looking tone or visible pigmentation. The Icono team can discuss your concerns first and guide you toward an appropriate care routine and refreshed-looking finish.",
   },
   {
     name: "Pimples Treatment",
-    description: "A consultation-led salon care service for blemish-prone-looking skin.",
+    description:
+      "A consultation-led salon-care service for clients concerned about blemish-prone-looking skin. The focus remains on careful cosmetic skin care, with suitability discussed before the service rather than promising a medical outcome.",
   },
   {
     name: "Anti-Aging Facial",
-    description: "A facial focused on moisturised, refreshed and cared-for-looking skin.",
+    description:
+      "A salon facial for clients seeking moisturised, refreshed and cared-for-looking skin. It is selected around individual preferences and focuses on the cosmetic appearance of tired-looking skin without guaranteeing a specific result.",
   },
 ] as const;
 
