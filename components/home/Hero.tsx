@@ -54,10 +54,18 @@ export function Hero() {
             <em className="font-normal">intention.</em>
           </h1>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <CTAButton href="#services" variant="light">
+            <CTAButton
+              href="#services"
+              variant="light"
+              className="mx-auto w-[90%] sm:mx-0 sm:w-auto"
+            >
               Explore Services
             </CTAButton>
-            <CTAButton href="#appointment" variant="outlineLight">
+            <CTAButton
+              href="#appointment"
+              variant="outlineLight"
+              className="mx-auto w-[90%] sm:mx-0 sm:w-auto"
+            >
               Enquire on WhatsApp
             </CTAButton>
           </div>
