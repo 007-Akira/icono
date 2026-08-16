@@ -1,19 +1,32 @@
 import Image from "next/image";
-import { referenceImages } from "@/data/images";
 import { CTAButton } from "@/components/shared/CTAButton";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-[92svh] items-center overflow-hidden pt-20">
-      {/* Desktop retains the complete two-panel composition. */}
-      <Image
-        src={referenceImages.hero}
-        alt="Beauty portrait beside an editorial salon styling scene"
-        fill
-        priority
-        sizes="(min-width: 640px) 100vw, 0px"
-        className="hidden object-cover object-center sm:block"
-      />
+      {/* Explicit columns keep both images equally visible at every desktop width. */}
+      <div className="absolute inset-0 hidden grid-cols-2 sm:grid">
+        <div className="relative overflow-hidden">
+          <Image
+            src="/images/editorial/home-hero-portrait.webp"
+            alt="Editorial beauty portrait"
+            fill
+            priority
+            sizes="50vw"
+            className="object-cover object-center"
+          />
+        </div>
+        <div className="relative overflow-hidden">
+          <Image
+            src="/images/editorial/home-hero-studio.webp"
+            alt="Stylist finishing a client’s hair"
+            fill
+            priority
+            sizes="50vw"
+            className="object-cover object-center"
+          />
+        </div>
+      </div>
 
       {/* On phones, each half receives equal time instead of losing one image to cropping. */}
       <Image
