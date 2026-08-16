@@ -27,7 +27,7 @@ export default function ContactPage() {
               <dt className={labelClass}>Phone</dt>
               <dd>
                 <a href={`tel:${business.phonePrimary}`} className={actionClass}>
-                  {business.phoneDisplay} <span aria-hidden>↗</span>
+                  {business.phoneDisplay} <span aria-hidden>→</span>
                 </a>
               </dd>
             </div>
@@ -35,7 +35,7 @@ export default function ContactPage() {
               <dt className={labelClass}>Email us at</dt>
               <dd className="break-all">
                 <a href={`mailto:${business.email}`} className={actionClass}>
-                  {business.email} <span aria-hidden>↗</span>
+                  {business.email} <span aria-hidden>→</span>
                 </a>
               </dd>
             </div>
@@ -48,7 +48,7 @@ export default function ContactPage() {
                   rel="noreferrer"
                   className={actionClass}
                 >
-                  Start a conversation <span aria-hidden>↗</span>
+                  Start a conversation <span aria-hidden>→</span>
                 </a>
               </dd>
             </div>
@@ -61,7 +61,7 @@ export default function ContactPage() {
                   rel="noreferrer"
                   className={actionClass}
                 >
-                  @{business.instagram} <span aria-hidden>↗</span>
+                  @{business.instagram} <span aria-hidden>→</span>
                 </a>
               </dd>
             </div>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                   rel="noreferrer"
                   className={actionClass}
                 >
-                  {formattedAddress} <span aria-hidden>↗</span>
+                  {formattedAddress} <span aria-hidden>→</span>
                 </a>
               </dd>
             </div>
