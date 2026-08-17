@@ -26,11 +26,11 @@ export default function AboutPage() {
         <div className="relative order-1 min-h-[52svh] md:order-2 md:h-full">
           <Image
             src={referenceImages.founder}
-            alt="Temporary editorial portrait to be replaced with an authentic photograph of Ms. Revathy"
+            alt="Ms. Revathy, founder of Icono Beauty World"
             fill
             priority
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover grayscale"
+            className="object-cover object-right grayscale"
           />
         </div>
       </section>

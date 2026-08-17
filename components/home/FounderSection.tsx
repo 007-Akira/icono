@@ -20,10 +20,10 @@ export function FounderSection() {
         <div className="relative aspect-[3/4] overflow-hidden md:col-span-5 md:col-start-8 md:row-start-1">
           <Image
             src={referenceImages.founder}
-            alt="Temporary editorial portrait; replace with an authentic photograph of Ms. Revathy"
+            alt="Ms. Revathy, founder of Icono Beauty World"
             fill
             sizes="(min-width: 768px) 42vw, 100vw"
-            className="object-cover grayscale"
+            className="object-cover object-right grayscale"
           />
         </div>
       </div>
