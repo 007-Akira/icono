@@ -12,6 +12,8 @@ export const referenceImages = {
   darkHair: `${editorial}/dark-hair-texture.webp`,
   warmHair: `${editorial}/warm-hair-texture.webp`,
   softFabric: `${editorial}/soft-fabric-texture.webp`,
-  founder: `${editorial}/founder-reference.webp`,
+  // A unique filename prevents browsers and image CDNs from reusing the old
+  // placeholder portrait that previously lived at this location.
+  founder: `${editorial}/ms-revathy-founder.webp`,
   founderTraining: `${editorial}/founder-training.webp`,
 } as const;
