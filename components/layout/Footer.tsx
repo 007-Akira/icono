@@ -17,7 +17,9 @@ export function Footer() {
             <br />
             Professional beauty, hair and makeover services in Kollam.
           </p>
-          <p className="mt-5 max-w-sm text-sm leading-6 text-bone">{formattedAddress}</p>
+          <address className="mt-5 max-w-sm text-sm not-italic leading-6 text-bone">
+            {formattedAddress}
+          </address>
         </div>
         <div className="md:col-span-2">
           <p className="eyebrow mb-5 text-bone">Explore</p>
