@@ -13,4 +13,5 @@ export const referenceImages = {
   warmHair: `${editorial}/warm-hair-texture.webp`,
   softFabric: `${editorial}/soft-fabric-texture.webp`,
   founder: `${editorial}/founder-reference.webp`,
+  founderTraining: `${editorial}/founder-training.webp`,
 } as const;
