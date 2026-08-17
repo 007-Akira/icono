@@ -52,6 +52,10 @@ const nextConfig = {
     ];
   },
   images: {
+    // All production photography is already compressed WebP. Serving it as a
+    // static asset avoids an extra Worker hop that currently returns the same
+    // bytes without resizing them.
+    unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "lh3.googleusercontent.com", pathname: "/aida-public/**" },
     ],
