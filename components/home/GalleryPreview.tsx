@@ -15,23 +15,27 @@ export function GalleryPreview() {
             View the gallery
           </Link>
         </div>
-        <div className="grid auto-rows-[180px] grid-cols-2 gap-4 md:auto-rows-[230px] md:grid-cols-6">
+        <div className="grid auto-rows-[180px] grid-cols-2 gap-4 md:auto-rows-[230px] md:grid-cols-12">
           {homepageGalleryItems.map((item, index) => (
             <figure
               key={item.id}
               className={`relative overflow-hidden bg-bone ${
                 index === 0
-                  ? "col-span-2 row-span-2 md:col-span-3"
+                  ? "col-span-2 row-span-2 md:col-span-6"
                   : index === 2
-                    ? "row-span-2 md:col-span-2"
-                    : "md:col-span-1"
+                    ? "row-span-2 md:col-span-3"
+                    : index === 1 || index === 3
+                      ? "md:col-span-3"
+                      : index === 4
+                        ? "md:col-span-5"
+                        : "md:col-span-7"
               }`}
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(min-width: 768px) 45vw, 50vw"
+                sizes="(min-width: 768px) 50vw, 50vw"
                 className="editorial-image object-cover"
                 style={{ objectPosition: item.focalPoint }}
               />

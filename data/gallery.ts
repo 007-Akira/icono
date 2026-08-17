@@ -10,6 +10,13 @@ export type GalleryItem = {
 // the homepage so the preview balances full looks, hair work and close detail.
 export const galleryItems: GalleryItem[] = [
   {
+    id: 9,
+    src: "/images/work/bridal-coral-saree-look.webp",
+    alt: "Icono bridal makeup and hair styling with a coral silk saree",
+    ratio: "portrait",
+    focalPoint: "50% 32%",
+  },
+  {
     id: 1,
     src: "/images/work/bridal-green-look.webp",
     alt: "Icono bridal styling with a green traditional outfit and detailed mehndi",
@@ -67,4 +74,4 @@ export const galleryItems: GalleryItem[] = [
   },
 ];
 
-export const homepageGalleryItems = galleryItems.slice(0, 5);
+export const homepageGalleryItems = galleryItems.slice(0, 6);
