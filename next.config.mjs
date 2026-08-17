@@ -1,6 +1,33 @@
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'none'",
+  "form-action 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' https://fonts.gstatic.com data:",
+  "img-src 'self' data: blob:",
+  "frame-src https://www.google.com",
+  "connect-src 'self'",
+  "upgrade-insecure-requests",
+].join("; ");
+
+const securityHeaders = [
+  { key: "Content-Security-Policy", value: contentSecurityPolicy },
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "X-Frame-Options", value: "DENY" },
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+  },
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   agentRules: false,
+  poweredByHeader: false,
   // OpenNext converts Next.js' standalone server output into a Cloudflare Worker.
   output: "standalone",
   // Allow phones on the current development host to load Next.js client
@@ -10,6 +37,9 @@ const nextConfig = {
   // Node 24 can drop captured stdout from Next's detached TypeScript CLI.
   // The compiler API performs the same build-time checking without that issue.
   experimental: { useTypeScriptCli: false },
+  async headers() {
+    return [{ source: "/(.*)", headers: securityHeaders }];
+  },
   async redirects() {
     return [
       { source: "/services/skin", destination: "/services/skin-facial", permanent: true },
