@@ -12,8 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const openingStory = founder.story.slice(0, 3);
-  const continuingStory = founder.story.slice(3);
+  const openingStatement = founder.story[0];
+  const trainingStory = founder.story.slice(1, 3);
+  const buildingStory = founder.story.slice(3, 7);
+  const closingStory = founder.story.slice(7);
 
   return (
     <>
@@ -39,72 +41,86 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="bg-floral py-section">
-        <div className="page-shell">
-          <div className="grid gap-12 md:grid-cols-12">
-            <div className="md:col-span-4">
-              <div className="md:sticky md:top-32">
-                <SectionLabel>Founder</SectionLabel>
-                <h2 className="display mt-5 text-5xl">{founder.name}</h2>
-                <p className="eyebrow mt-5 text-olive">{founder.role}</p>
-              </div>
+        <div className="page-shell grid gap-10 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-4">
+            <SectionLabel>Meet the Founder</SectionLabel>
+            <h2 className="display mt-5 text-5xl sm:text-6xl">{founder.name}</h2>
+            <p className="eyebrow mt-5 text-olive">{founder.role}</p>
+          </div>
+          <p className="display text-3xl leading-snug text-smoke sm:text-4xl md:col-span-7 md:col-start-6 md:text-5xl">
+            {openingStatement}
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-smoke py-section text-floral">
+        <div className="page-shell grid gap-12 md:grid-cols-12 md:items-center">
+          <figure className="md:col-span-6">
+            <div className="relative aspect-[3/4] overflow-hidden bg-olive">
+              <Image
+                src={referenceImages.founderTraining}
+                alt="Ms. Revathy receiving a professional training certificate in Germany"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
-            <div className="space-y-7 text-lg leading-8 text-olive md:col-span-6 md:col-start-7">
-              {openingStory.map((paragraph, index) => (
-                <p
-                  key={paragraph}
-                  className={index === 0 ? "display text-3xl leading-snug text-smoke sm:text-4xl" : ""}
-                >
-                  {paragraph}
-                </p>
+            <figcaption className="eyebrow mt-4 text-floral/65">
+              Professional training in Germany
+            </figcaption>
+          </figure>
+          <div className="md:col-span-5 md:col-start-8">
+            <p className="eyebrow text-floral/65">Chapter 01 · Learning</p>
+            <h2 className="display mt-5 text-5xl leading-tight sm:text-6xl">
+              Learning without limits.
+            </h2>
+            <div className="mt-9 space-y-7 text-lg leading-8 text-floral/75">
+              {trainingStory.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-20 grid items-end gap-10 md:mt-28 md:grid-cols-12">
-            <div className="border-y border-olive/30 py-8 md:col-span-4 md:col-start-2">
-              <p className="display text-6xl leading-none">25+</p>
-              <p className="eyebrow mt-3 text-olive">Years of experience</p>
-              <div className="mt-8 border-t border-olive/20 pt-8">
-                <p className="display text-6xl leading-none">18+</p>
-                <p className="eyebrow mt-3 text-olive">Years of teaching</p>
-              </div>
-            </div>
-            <figure className="md:col-span-6 md:col-start-7">
-              <div className="relative aspect-[3/4] overflow-hidden bg-bone">
-                <Image
-                  src={referenceImages.founderTraining}
-                  alt="Ms. Revathy receiving a professional training certificate in Germany"
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <figcaption className="eyebrow mt-4 text-olive">
-                Professional training in Germany
-              </figcaption>
-            </figure>
+      <section className="border-b border-olive/20 bg-bone/35">
+        <div className="page-shell grid divide-y divide-olive/20 md:grid-cols-3 md:divide-x md:divide-y-0">
+          <div className="py-10 md:pr-10">
+            <p className="display text-5xl">25+</p>
+            <p className="eyebrow mt-2 text-olive">Years of experience</p>
           </div>
+          <div className="py-10 md:px-10">
+            <p className="display text-5xl">Germany</p>
+            <p className="eyebrow mt-2 text-olive">Professional training</p>
+          </div>
+          <div className="py-10 md:pl-10">
+            <p className="display text-5xl">18+</p>
+            <p className="eyebrow mt-2 text-olive">Years of teaching</p>
+          </div>
+        </div>
+      </section>
 
-          <div className="mt-20 grid gap-12 md:mt-28 md:grid-cols-12">
-            <div className="md:col-span-4">
-              <p className="display max-w-xs text-4xl leading-tight sm:text-5xl">
-                Built step by step.
-              </p>
-            </div>
-            <div className="space-y-7 text-lg leading-8 text-olive md:col-span-6 md:col-start-7">
-              {continuingStory.map((paragraph, index) => (
-                <p
-                  key={paragraph}
-                  className={
-                    index === continuingStory.length - 2
-                      ? "display border-l border-olive/40 py-2 pl-6 text-2xl leading-snug text-smoke"
-                      : ""
-                  }
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+      <section className="bg-floral py-section">
+        <div className="page-shell grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <p className="eyebrow text-olive">Chapter 02 · Building Icono</p>
+            <h2 className="display mt-5 max-w-sm text-5xl leading-tight sm:text-6xl">
+              Built step by step.
+            </h2>
+          </div>
+          <div className="space-y-7 text-lg leading-8 text-olive md:col-span-6 md:col-start-7">
+            {buildingStory.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+
+        <div className="page-shell mt-20 md:mt-28">
+          <div className="border-y border-olive/30 py-12 text-center sm:py-16">
+            <p className="display mx-auto max-w-4xl text-4xl leading-tight text-smoke sm:text-6xl">
+              {closingStory[0]}
+            </p>
+            <p className="eyebrow mt-8 text-olive">{closingStory[1]}</p>
           </div>
         </div>
       </section>
