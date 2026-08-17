@@ -47,9 +47,6 @@ export default function GalleryPage() {
                   style={{ objectPosition: item.focalPoint }}
                 />
               </div>
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-smoke/75 to-transparent px-4 pb-4 pt-14 text-xs uppercase tracking-wider text-floral">
-                {item.category}
-              </figcaption>
             </figure>
           ))}
         </div>

@@ -2,7 +2,6 @@ export type GalleryItem = {
   id: number;
   src: string;
   alt: string;
-  category: "Bridal" | "Hair";
   ratio: "portrait" | "square" | "tall" | "wide";
   focalPoint: string;
 };
@@ -14,7 +13,6 @@ export const galleryItems: GalleryItem[] = [
     id: 1,
     src: "/images/work/bridal-green-look.webp",
     alt: "Icono bridal styling with a green traditional outfit and detailed mehndi",
-    category: "Bridal",
     ratio: "portrait",
     focalPoint: "50% 25%",
   },
@@ -22,7 +20,6 @@ export const galleryItems: GalleryItem[] = [
     id: 2,
     src: "/images/work/layered-hair-styling.webp",
     alt: "Layered haircut and smooth salon styling by Icono",
-    category: "Hair",
     ratio: "square",
     focalPoint: "50% 30%",
   },
@@ -30,7 +27,6 @@ export const galleryItems: GalleryItem[] = [
     id: 3,
     src: "/images/work/bridal-copper-look.webp",
     alt: "Icono bridal makeup and hair styling with a copper bridal outfit",
-    category: "Bridal",
     ratio: "tall",
     focalPoint: "50% 25%",
   },
@@ -38,7 +34,6 @@ export const galleryItems: GalleryItem[] = [
     id: 4,
     src: "/images/work/bridal-jewellery-detail.webp",
     alt: "Close bridal makeup and jewellery detailing by Icono",
-    category: "Bridal",
     ratio: "square",
     focalPoint: "50% 35%",
   },
@@ -46,7 +41,6 @@ export const galleryItems: GalleryItem[] = [
     id: 5,
     src: "/images/work/side-braid-hair-styling.webp",
     alt: "Side braid and long-hair styling by Icono",
-    category: "Hair",
     ratio: "square",
     focalPoint: "50% 30%",
   },
@@ -54,7 +48,6 @@ export const galleryItems: GalleryItem[] = [
     id: 6,
     src: "/images/work/bridal-red-saree-look.webp",
     alt: "Icono occasion makeup and styling with a red traditional saree",
-    category: "Bridal",
     ratio: "tall",
     focalPoint: "50% 25%",
   },
@@ -62,7 +55,6 @@ export const galleryItems: GalleryItem[] = [
     id: 7,
     src: "/images/work/bridal-rose-look.webp",
     alt: "Icono bridal makeup with a rose outfit and bouquet",
-    category: "Bridal",
     ratio: "portrait",
     focalPoint: "50% 30%",
   },
@@ -70,7 +62,6 @@ export const galleryItems: GalleryItem[] = [
     id: 8,
     src: "/images/work/bridal-silver-look.webp",
     alt: "Icono bridal makeup and styling with a silver embroidered outfit",
-    category: "Bridal",
     ratio: "portrait",
     focalPoint: "50% 25%",
   },

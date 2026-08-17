@@ -35,9 +35,6 @@ export function GalleryPreview() {
                 className="editorial-image object-cover"
                 style={{ objectPosition: item.focalPoint }}
               />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-smoke/70 to-transparent px-3 pb-3 pt-10 text-[10px] uppercase tracking-[0.18em] text-floral">
-                {item.category}
-              </figcaption>
             </figure>
           ))}
         </div>
