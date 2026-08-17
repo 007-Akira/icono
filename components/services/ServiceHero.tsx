@@ -4,9 +4,9 @@ import { ServicePageData } from "@/data/services";
 export function ServiceHero({ service }: { service: ServicePageData }) {
   return (
     <section className="page-shell grid items-center gap-12 pb-20 pt-36 md:grid-cols-12 md:pb-28 md:pt-44">
-      <div className="z-10 md:col-span-5">
+      <div className="z-10 md:col-span-5 md:pr-8 lg:pr-12">
         <p className="eyebrow text-olive">{service.eyebrow}</p>
-        <h1 className="display mt-5 text-[clamp(3.5rem,7vw,6.5rem)] font-semibold uppercase leading-[.95]">
+        <h1 className="display mt-5 text-[clamp(3.25rem,6vw,5.75rem)] font-semibold uppercase leading-[.95]">
           {service.title}
         </h1>
         <p className="display mt-6 text-2xl leading-snug text-olive">{service.subtitle}</p>
