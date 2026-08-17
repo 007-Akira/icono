@@ -45,9 +45,6 @@ export default function AboutPage() {
             {founder.story.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            <blockquote className="display mt-10 border-l border-olive/40 pl-6 text-2xl leading-snug text-smoke">
-              “{founder.philosophy}”
-            </blockquote>
           </div>
         </div>
       </section>
