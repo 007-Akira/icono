@@ -1,5 +1,4 @@
 import { Hero } from "@/components/home/Hero";
-import { BrandIntro } from "@/components/home/BrandIntro";
 import { SignatureServices } from "@/components/home/SignatureServices";
 import { FounderSection } from "@/components/home/FounderSection";
 import { FeaturedTreatment } from "@/components/home/FeaturedTreatment";
@@ -11,7 +10,6 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <BrandIntro />
       <SignatureServices />
       <FounderSection />
       <FeaturedTreatment />
