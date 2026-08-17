@@ -3,16 +3,18 @@ import { AppointmentEnquiry } from "@/components/home/AppointmentEnquiry";
 import { VisitIcono } from "@/components/home/VisitIcono";
 import { business, formattedAddress } from "@/data/business";
 import { createGeneralWhatsAppUrl } from "@/lib/whatsapp";
+import { createPageMetadata } from "@/lib/seo";
 
 const labelClass = "display text-lg font-semibold text-smoke";
 const actionClass =
   "group inline-flex items-center gap-2 border-b border-olive/40 pb-1 font-medium text-smoke transition-all hover:gap-3 hover:border-smoke";
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact Icono Beauty World & Makeover Studio | Kollam",
   description:
-    "Contact Icono Beauty World & Makeover Studio in Karicode, Kollam by phone, WhatsApp, email or Instagram.",
-};
+    "Contact Icono Beauty World & Makeover Studio near TKM Arts College, Karicode, Kollam. Call or enquire directly through WhatsApp.",
+  path: "/contact",
+});
 export default function ContactPage() {
   return (
     <>

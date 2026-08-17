@@ -2,12 +2,16 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { galleryItems } from "@/data/gallery";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Gallery",
+export const metadata: Metadata = createPageMetadata({
+  title: "Bridal, Hair & Makeover Gallery | Icono Kollam",
   description:
-    "Explore bridal makeup and hair styling work by Icono Beauty World & Makeover Studio in Kollam.",
-};
+    "Explore selected bridal, hair, makeup and beauty work from Icono Beauty World & Makeover Studio in Kollam.",
+  path: "/gallery",
+  image: "/images/social/bridal-og.webp",
+  imageAlt: "Bridal makeup and styling work by Icono in Kollam",
+});
 export default function GalleryPage() {
   return (
     <>

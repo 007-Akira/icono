@@ -4,12 +4,16 @@ import { referenceImages } from "@/data/images";
 import { founder } from "@/data/founder";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { SectionLabel } from "@/components/shared/SectionLabel";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About",
+export const metadata: Metadata = createPageMetadata({
+  title: "About Icono | Beauty World & Makeover Studio in Kollam",
   description:
-    "Meet Ms. Revathy, founder of Icono Beauty World & Makeover Studio in Karicode, Kollam.",
-};
+    "Meet Ms. Revathy and discover the founder-led journey behind Icono Beauty World & Makeover Studio in Karicode, Kollam, including her confirmed professional training.",
+  path: "/about",
+  image: "/images/social/founder-og.webp",
+  imageAlt: "Ms. Revathy, founder of Icono Beauty World & Makeover Studio",
+});
 
 export default function AboutPage() {
   const openingStatement = founder.story[0];

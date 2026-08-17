@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { services } from "@/data/services";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Explore Icono",
+export const metadata: Metadata = createPageMetadata({
+  title: "Explore Icono Beauty World & Makeover Studio",
   description:
-    "Explore the main pages, salon services and website information available from Icono.",
-};
+    "Explore Icono Beauty World & Makeover Studio, salon services, gallery, contact information and website policies.",
+  path: "/explore",
+});
 
 const mainLinks = [
   { href: "/", label: "Home", description: "Discover Icono and its signature services." },

@@ -37,9 +37,9 @@ export const services: ServicePageData[] = [
     intro:
       "From considered cuts and contemporary colour to salon treatments, Icono's hair services are shaped around your style, texture and preferred finish.",
     heroImage: referenceImages.hair,
-    metaTitle: "Hair Services in Kollam",
+    metaTitle: "Hair Services in Kollam | Icono Beauty World & Makeover Studio",
     metaDescription:
-      "Explore hair cuts, colouring, styling and salon hair treatments at Icono in Karicode, Kollam.",
+      "Explore hair cutting, styling, colouring and salon hair treatments at Icono Beauty World & Makeover Studio in Karicode, Kollam.",
     visualBreaks: [
       { src: referenceImages.darkHair, alt: "Editorial close-up of dark styled hair texture" },
       { src: referenceImages.warmHair, alt: "Warm editorial hair texture" },
@@ -157,9 +157,9 @@ export const services: ServicePageData[] = [
     intro:
       "Explore Icono's salon facial and skin-care services, with options selected around your preferences and concerns.",
     heroImage: referenceImages.skin,
-    metaTitle: "Facial & Skin Care Services in Kollam",
+    metaTitle: "Facial & Skin Care Services in Kollam | Icono",
     metaDescription:
-      "Explore facial and salon skin-care services at Icono Beauty World in Karicode, Kollam.",
+      "Explore facial, clean-up and beauty-care services at Icono Beauty World & Makeover Studio near TKM Arts College, Karicode, Kollam.",
     visualBreaks: [{ src: referenceImages.treatment, alt: "Editorial skin-care texture" }],
     categories: [
       {
@@ -272,9 +272,9 @@ export const services: ServicePageData[] = [
     intro:
       "Makeup services for weddings and occasions, shaped around your preferred style, outfit and event.",
     heroImage: referenceImages.bridal,
-    metaTitle: "Bridal Makeup in Kollam",
+    metaTitle: "Bridal Makeup in Kollam | Icono Makeover Studio",
     metaDescription:
-      "Explore bridal, party and occasion makeup services at Icono Beauty World & Makeover Studio in Kollam.",
+      "Explore bridal makeup, party makeup and makeover services at Icono Beauty World & Makeover Studio in Karicode, Kollam. Enquire about your event via WhatsApp.",
     visualBreaks: [{ src: referenceImages.tools, alt: "Editorial beauty tools and makeup detail" }],
     categories: [
       {
@@ -338,9 +338,9 @@ export const services: ServicePageData[] = [
     intro:
       "Everyday beauty and grooming services delivered with careful attention to shape, finish and comfort.",
     heroImage: referenceImages.beautyEssentials,
-    metaTitle: "Beauty and Grooming Services in Kollam",
+    metaTitle: "Beauty & Grooming Services in Kollam | Icono",
     metaDescription:
-      "Explore threading, waxing and everyday grooming services at Icono in Karicode, Kollam.",
+      "Explore threading, waxing, bleaching, D-Tan and grooming services at Icono Beauty World & Makeover Studio in Karicode, Kollam.",
     visualBreaks: [{ src: referenceImages.softFabric, alt: "Soft editorial beauty-care texture" }],
     categories: [
       {
@@ -407,9 +407,9 @@ export const services: ServicePageData[] = [
     subtitle: "Hair Spa · Hands · Feet · Body Care",
     intro: "Salon spa and grooming services for hair, hands, feet and body care.",
     heroImage: referenceImages.spaGrooming,
-    metaTitle: "Spa and Grooming Services in Kollam",
+    metaTitle: "Hair Spa, Manicure & Grooming in Kollam | Icono",
     metaDescription:
-      "Explore hair spa, manicure, pedicure, foot spa and grooming services at Icono in Kollam.",
+      "Explore hair spa, manicure, pedicure, foot spa and salon grooming services at Icono Beauty World & Makeover Studio in Kollam.",
     visualBreaks: [{ src: referenceImages.treatment, alt: "Editorial treatment texture" }],
     categories: [
       {
@@ -489,9 +489,9 @@ export const services: ServicePageData[] = [
     subtitle: "Extensions · Piercing · Styling · Creative Services",
     intro: "Explore Icono's additional styling, piercing and creative beauty services.",
     heroImage: referenceImages.speciality,
-    metaTitle: "Speciality Beauty Services in Kollam",
+    metaTitle: "Speciality Beauty Services in Kollam | Icono",
     metaDescription:
-      "Explore hair extensions, ear piercing, eyebrow filling and creative services at Icono in Kollam.",
+      "Explore hair extensions, eyebrow filling, piercing and other confirmed speciality beauty services at Icono in Karicode, Kollam.",
     visualBreaks: [{ src: referenceImages.tools, alt: "Editorial salon tools and styling detail" }],
     categories: [
       {
