@@ -3,6 +3,9 @@ import Link from "next/link";
 import { homepageGalleryItems } from "@/data/gallery";
 
 export function GalleryPreview() {
+  const mosaicItems = homepageGalleryItems.slice(0, 4);
+  const fullFrameItems = homepageGalleryItems.slice(4);
+
   return (
     <section className="py-section">
       <div className="page-shell">
@@ -16,7 +19,7 @@ export function GalleryPreview() {
           </Link>
         </div>
         <div className="grid auto-rows-[180px] grid-cols-2 gap-4 md:auto-rows-[230px] md:grid-cols-12">
-          {homepageGalleryItems.map((item, index) => (
+          {mosaicItems.map((item, index) => (
             <figure
               key={item.id}
               className={`relative overflow-hidden bg-bone ${
@@ -24,11 +27,7 @@ export function GalleryPreview() {
                   ? "col-span-2 row-span-2 md:col-span-6"
                   : index === 2
                     ? "row-span-2 md:col-span-3"
-                    : index === 1 || index === 3
-                      ? "md:col-span-3"
-                      : index === 4
-                        ? "md:col-span-5"
-                        : "md:col-span-7"
+                    : "md:col-span-3"
               }`}
             >
               <Image
@@ -38,6 +37,19 @@ export function GalleryPreview() {
                 sizes="(min-width: 768px) 50vw, 50vw"
                 className="editorial-image object-cover"
                 style={{ objectPosition: item.focalPoint }}
+              />
+            </figure>
+          ))}
+        </div>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          {fullFrameItems.map((item) => (
+            <figure key={item.id} className="relative aspect-[3/4] overflow-hidden bg-bone">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                sizes="(min-width: 640px) 50vw, 100vw"
+                className="editorial-image object-cover"
               />
             </figure>
           ))}
