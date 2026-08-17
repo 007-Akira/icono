@@ -11,7 +11,7 @@ export function ServiceItem({ item }: { item: ServiceItemData }) {
       <a
         href={createGeneralWhatsAppUrl(business.whatsapp, message)}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className="eyebrow mt-4 inline-flex items-center gap-1 border-b border-transparent pb-1 transition-all hover:gap-2 hover:border-smoke"
       >
         Enquire <span aria-hidden>→</span>

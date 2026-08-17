@@ -16,7 +16,7 @@ export function ServiceGuidanceCTA({ category }: { category: string }) {
       <a
         href={createGeneralWhatsAppUrl(business.whatsapp, message)}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className="eyebrow mt-8 inline-flex bg-smoke px-7 py-4 text-floral"
       >
         Enquire on WhatsApp

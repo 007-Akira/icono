@@ -102,7 +102,7 @@ export function PolicyPage({ policy }: { policy: PolicyPageData }) {
                 `Hello Icono, I have a question about your ${policy.title}.`,
               )}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="eyebrow inline-flex min-h-12 items-center bg-smoke px-5 py-3 text-floral"
             >
               Ask on WhatsApp

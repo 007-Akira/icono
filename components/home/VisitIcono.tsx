@@ -32,7 +32,7 @@ export function VisitIcono() {
               <a
                 href={business.googleMapsUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className={contactButtonClass}
               >
                 <ContactIcon name="location" />
@@ -46,7 +46,7 @@ export function VisitIcono() {
             <a
               href={createGeneralWhatsAppUrl(business.whatsapp)}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={contactButtonClass}
             >
               <ContactIcon name="whatsapp" />
@@ -55,7 +55,7 @@ export function VisitIcono() {
             <a
               href={business.instagramUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={contactButtonClass}
             >
               <ContactIcon name="instagram" />

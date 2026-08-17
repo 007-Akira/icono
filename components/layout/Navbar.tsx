@@ -100,7 +100,7 @@ export function Navbar() {
           <a
             href={whatsappUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="display text-lg bg-smoke px-5 py-3 text-floral"
           >
             Enquire
@@ -110,7 +110,7 @@ export function Navbar() {
           <a
             href={whatsappUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="display bg-smoke px-4 py-2 text-sm text-floral"
           >
             Enquire
