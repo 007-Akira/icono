@@ -86,7 +86,7 @@ export function AppointmentEnquiry() {
               <input type="hidden" name="service" value={selectedService} />
               <button
                 type="button"
-                className="picker-field flex items-center text-left"
+                className="picker-field flex touch-manipulation items-center justify-between text-left"
                 aria-labelledby="service-picker-label service-picker-value"
                 aria-haspopup="listbox"
                 aria-controls="appointment-service-options"
@@ -99,8 +99,8 @@ export function AppointmentEnquiry() {
                 >
                   {selectedService || "Select a service"}
                 </span>
+                <PickerIcon />
               </button>
-              <PickerIcon />
               {serviceOpen ? (
                 <div
                   id="appointment-service-options"
@@ -170,11 +170,17 @@ function Field({
 
 function PickerIcon() {
   return (
-    <span
-      className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-olive"
-      aria-hidden
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="pointer-events-none size-5 shrink-0 text-olive"
+      aria-hidden="true"
     >
-      ⌄
-    </span>
+      <path d="m7 9.5 5 5 5-5" />
+    </svg>
   );
 }

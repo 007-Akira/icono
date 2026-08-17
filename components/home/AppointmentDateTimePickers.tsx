@@ -57,7 +57,7 @@ export function AppointmentDateTimePickers() {
           <input type="hidden" name="date" value={selectedDate ? toDateValue(selectedDate) : ""} />
           <button
             type="button"
-            className="picker-field flex items-center text-left"
+            className="picker-field flex touch-manipulation items-center justify-between text-left"
             aria-labelledby="date-picker-label date-picker-value"
             aria-haspopup="dialog"
             aria-expanded={openPicker === "date"}
@@ -66,8 +66,8 @@ export function AppointmentDateTimePickers() {
             <span id="date-picker-value" className={selectedDate ? "text-smoke" : "text-olive"}>
               {selectedDate ? formatSelectedDate(selectedDate) : "Choose a date"}
             </span>
+            <CalendarIcon />
           </button>
-          <CalendarIcon />
           {openPicker === "date" ? (
             <div
               role="dialog"
@@ -135,7 +135,7 @@ export function AppointmentDateTimePickers() {
           <input type="hidden" name="time" value={selectedTime} />
           <button
             type="button"
-            className="picker-field flex items-center text-left"
+            className="picker-field flex touch-manipulation items-center justify-between text-left"
             aria-labelledby="time-picker-label time-picker-value"
             aria-haspopup="listbox"
             aria-expanded={openPicker === "time"}
@@ -145,8 +145,8 @@ export function AppointmentDateTimePickers() {
               {timeOptions.find((option) => option.value === selectedTime)?.label ||
                 "Choose a time"}
             </span>
+            <ClockIcon />
           </button>
-          <ClockIcon />
           {openPicker === "time" ? (
             <div
               role="listbox"
@@ -183,7 +183,7 @@ function CalendarIcon() {
       fill="none"
       stroke="currentColor"
       strokeWidth="1.5"
-      className="pointer-events-none absolute right-4 top-1/2 size-5 -translate-y-1/2 text-olive"
+      className="pointer-events-none size-5 shrink-0 text-olive"
       aria-hidden="true"
     >
       <path d="M6.5 3.5v3M17.5 3.5v3M4 9h16M5.5 5h13A1.5 1.5 0 0 1 20 6.5v12a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-12A1.5 1.5 0 0 1 5.5 5Z" />
@@ -198,7 +198,7 @@ function ClockIcon() {
       fill="none"
       stroke="currentColor"
       strokeWidth="1.5"
-      className="pointer-events-none absolute right-4 top-1/2 size-5 -translate-y-1/2 text-olive"
+      className="pointer-events-none size-5 shrink-0 text-olive"
       aria-hidden="true"
     >
       <circle cx="12" cy="12" r="8.5" />
