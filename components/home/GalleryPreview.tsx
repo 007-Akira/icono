@@ -3,10 +3,13 @@ import Link from "next/link";
 import { homepageGalleryItems } from "@/data/gallery";
 
 export function GalleryPreview() {
-  const mosaicItems = homepageGalleryItems.slice(0, 4);
-  // Repeat the outer images from the mosaic in their complete 3:4 framing so
-  // the featured work can be appreciated without the editorial crop.
-  const fullFrameItems = [homepageGalleryItems[0], homepageGalleryItems[2]];
+  const [topLeft, innerTop, topRight, innerBottom, bottomLeft, bottomRight] =
+    homepageGalleryItems;
+
+  // Exchange the two outer mosaic images with the two images in the bottom row.
+  // The remaining mosaic positions stay unchanged.
+  const mosaicItems = [bottomLeft, innerTop, bottomRight, innerBottom];
+  const fullFrameItems = [topLeft, topRight];
 
   return (
     <section className="py-section">
@@ -38,20 +41,28 @@ export function GalleryPreview() {
                 fill
                 sizes="(min-width: 768px) 50vw, 50vw"
                 className="editorial-image object-cover"
-                style={{ objectPosition: item.focalPoint }}
+                style={{ objectPosition: index === 0 ? "50% 45%" : item.focalPoint }}
               />
             </figure>
           ))}
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          {fullFrameItems.map((item) => (
-            <figure key={item.id} className="relative aspect-[3/4] overflow-hidden bg-bone">
+          {fullFrameItems.map((item, index) => (
+            <figure
+              key={item.id}
+              className={`relative w-[94%] overflow-hidden bg-bone sm:w-[92%] ${
+                index === 0
+                  ? "aspect-[1086/1370] justify-self-start"
+                  : "aspect-[3/4] justify-self-end"
+              }`}
+            >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
-                className="editorial-image object-contain"
+                className="editorial-image object-cover"
+                style={{ objectPosition: item.focalPoint }}
               />
             </figure>
           ))}
