@@ -7,6 +7,11 @@ import { services } from "@/data/services";
 import { createWhatsAppUrl } from "@/lib/whatsapp";
 import { AppointmentDateTimePickers } from "./AppointmentDateTimePickers";
 
+const nameLimit = 80;
+const phoneLimit = 20;
+const messageLimit = 500;
+const phonePattern = /^[+()\d][+()\d\s-]{6,19}$/;
+
 export function AppointmentEnquiry() {
   const [error, setError] = useState("");
   const [serviceOpen, setServiceOpen] = useState(false);
@@ -33,18 +38,30 @@ export function AppointmentEnquiry() {
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    const data = {
-      name: String(form.get("name") || "").trim(),
-      phone: String(form.get("phone") || "").trim(),
-      service: String(form.get("service") || ""),
-      date: String(form.get("date") || ""),
-      time: String(form.get("time") || ""),
-      message: String(form.get("message") || "").trim(),
-    };
-    if (!data.name || !data.phone || !data.service) {
+    const name = String(form.get("name") || "").trim();
+    const phone = String(form.get("phone") || "").trim();
+    const service = String(form.get("service") || "");
+    const date = String(form.get("date") || "");
+    const time = String(form.get("time") || "");
+    const message = String(form.get("message") || "").trim();
+
+    const serviceIsValid = services.some((item) => item.title === service);
+    const dateIsValid = !date || /^\d{4}-\d{2}-\d{2}$/.test(date);
+    const timeIsValid = !time || /^([01]\d|2[0-3]):[0-5]\d$/.test(time);
+
+    if (
+      !name ||
+      name.length > nameLimit ||
+      !phonePattern.test(phone) ||
+      !serviceIsValid ||
+      !dateIsValid ||
+      !timeIsValid ||
+      message.length > messageLimit
+    ) {
       setError("Please complete your name, phone number, and service.");
       return;
     }
+    const data = { name, phone, service, date, time, message };
     // Nothing is submitted to this website. The helper prepares a wa.me URL and
     // lets the visitor review the populated message inside WhatsApp.
     const url = createWhatsAppUrl(business.whatsapp, data);
@@ -76,8 +93,16 @@ export function AppointmentEnquiry() {
           </div>
         </div>
         <form onSubmit={submit} noValidate className="space-y-7">
-          <Field label="Full name" name="name" required />
-          <Field label="Phone number" name="phone" type="tel" required />
+          <Field label="Full name" name="name" autoComplete="name" maxLength={nameLimit} required />
+          <Field
+            label="Phone number"
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            inputMode="tel"
+            maxLength={phoneLimit}
+            required
+          />
           <div className="block" ref={servicePicker}>
             <span id="service-picker-label" className="eyebrow text-olive">
               Service *
@@ -131,7 +156,7 @@ export function AppointmentEnquiry() {
           <AppointmentDateTimePickers />
           <label className="block">
             <span className="eyebrow text-olive">Message</span>
-            <textarea className="field min-h-24 resize-y" name="message" />
+            <textarea className="field min-h-24 resize-y" name="message" maxLength={messageLimit} />
           </label>
           {error && (
             <p role="alert" className="border-l-2 border-smoke pl-4 text-sm">
@@ -150,11 +175,17 @@ function Field({
   label,
   name,
   type = "text",
+  autoComplete,
+  inputMode,
+  maxLength,
   required = false,
 }: {
   label: string;
   name: string;
   type?: string;
+  autoComplete?: string;
+  inputMode?: "tel";
+  maxLength?: number;
   required?: boolean;
 }) {
   return (
@@ -163,7 +194,15 @@ function Field({
         {label}
         {required ? " *" : ""}
       </span>
-      <input className="field" name={name} type={type} required={required} />
+      <input
+        className="field"
+        name={name}
+        type={type}
+        autoComplete={autoComplete}
+        inputMode={inputMode}
+        maxLength={maxLength}
+        required={required}
+      />
     </label>
   );
 }
