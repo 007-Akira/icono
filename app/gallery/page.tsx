@@ -6,7 +6,7 @@ import { CTAButton } from "@/components/shared/CTAButton";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Gallery layout for Icono Beauty World & Makeover Studio in Kollam. Approved salon work will be added here.",
+    "Explore bridal makeup and hair styling work by Icono Beauty World & Makeover Studio in Kollam.",
 };
 export default function GalleryPage() {
   return (
@@ -16,28 +16,25 @@ export default function GalleryPage() {
           <p className="eyebrow text-olive">Portfolio</p>
           <h1 className="display mt-4 text-6xl sm:text-8xl">Selected Work</h1>
           <p className="mt-7 max-w-2xl leading-7 text-olive">
-            This temporary gallery contains editorial visual references only. Authentic, approved
-            ICONO work will replace these images.
+            A selection of bridal, occasion and hair styling work created at Icono.
           </p>
         </div>
       </section>
       <section className="pb-section">
-        <div className="page-shell columns-1 gap-5 sm:columns-2 lg:columns-3">
+        <div className="page-shell grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {galleryItems.map((item) => (
-            <figure key={item.id} className="relative mb-5 break-inside-avoid overflow-hidden">
-              <div
-                className={`relative ${item.ratio === "tall" ? "aspect-[3/5]" : item.ratio === "wide" ? "aspect-[4/3]" : item.ratio === "square" ? "aspect-square" : "aspect-[3/4]"}`}
-              >
+            <figure key={item.id} className="relative overflow-hidden bg-bone">
+              <div className="relative aspect-[3/4]">
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   className="editorial-image object-cover"
                 />
               </div>
-              <figcaption className="absolute bottom-0 inset-x-0 bg-smoke/75 p-3 text-xs uppercase tracking-wider text-floral">
-                Editorial reference · Not ICONO work
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-smoke/75 to-transparent px-4 pb-4 pt-14 text-xs uppercase tracking-wider text-floral">
+                {item.category}
               </figcaption>
             </figure>
           ))}
