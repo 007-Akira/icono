@@ -15,15 +15,25 @@ export function GalleryPreview() {
             View the gallery
           </Link>
         </div>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
-          {homepageGalleryItems.map((item) => (
-            <figure key={item.id} className="relative aspect-[3/4] overflow-hidden bg-bone">
+        <div className="grid auto-rows-[180px] grid-cols-2 gap-4 md:auto-rows-[230px] md:grid-cols-6">
+          {homepageGalleryItems.map((item, index) => (
+            <figure
+              key={item.id}
+              className={`relative overflow-hidden bg-bone ${
+                index === 0
+                  ? "col-span-2 row-span-2 md:col-span-3"
+                  : index === 2
+                    ? "row-span-2 md:col-span-2"
+                    : "md:col-span-1"
+              }`}
+            >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(min-width: 768px) 20vw, 50vw"
+                sizes="(min-width: 768px) 45vw, 50vw"
                 className="editorial-image object-cover"
+                style={{ objectPosition: item.focalPoint }}
               />
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-smoke/70 to-transparent px-3 pb-3 pt-10 text-[10px] uppercase tracking-[0.18em] text-floral">
                 {item.category}

@@ -21,16 +21,30 @@ export default function GalleryPage() {
         </div>
       </section>
       <section className="pb-section">
-        <div className="page-shell grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="page-shell columns-1 gap-5 sm:columns-2 lg:columns-3">
           {galleryItems.map((item) => (
-            <figure key={item.id} className="relative overflow-hidden bg-bone">
-              <div className="relative aspect-[3/4]">
+            <figure
+              key={item.id}
+              className="relative mb-5 break-inside-avoid overflow-hidden bg-bone"
+            >
+              <div
+                className={`relative ${
+                  item.ratio === "tall"
+                    ? "aspect-[3/5]"
+                    : item.ratio === "wide"
+                      ? "aspect-[4/3]"
+                      : item.ratio === "square"
+                        ? "aspect-square"
+                        : "aspect-[3/4]"
+                }`}
+              >
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="editorial-image object-cover"
+                  style={{ objectPosition: item.focalPoint }}
                 />
               </div>
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-smoke/75 to-transparent px-4 pb-4 pt-14 text-xs uppercase tracking-wider text-floral">
