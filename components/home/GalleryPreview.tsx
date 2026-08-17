@@ -4,7 +4,9 @@ import { homepageGalleryItems } from "@/data/gallery";
 
 export function GalleryPreview() {
   const mosaicItems = homepageGalleryItems.slice(0, 4);
-  const fullFrameItems = homepageGalleryItems.slice(4);
+  // Repeat the outer images from the mosaic in their complete 3:4 framing so
+  // the featured work can be appreciated without the editorial crop.
+  const fullFrameItems = [homepageGalleryItems[0], homepageGalleryItems[2]];
 
   return (
     <section className="py-section">
@@ -49,7 +51,7 @@ export function GalleryPreview() {
                 alt={item.alt}
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
-                className="editorial-image object-cover"
+                className="editorial-image object-contain"
               />
             </figure>
           ))}
