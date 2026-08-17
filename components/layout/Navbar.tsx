@@ -117,7 +117,8 @@ export function Navbar() {
           </a>
 
           <button
-            className="grid size-11 place-items-center"
+            type="button"
+            className="grid size-11 touch-manipulation place-items-center"
             onClick={() => setMobileOpen((v) => !v)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
@@ -147,7 +148,8 @@ export function Navbar() {
               </Link>
             ))}
             <button
-              className="display text-lg flex w-full items-center justify-between border-b border-smoke/10 py-3.5 text-left text-olive"
+              type="button"
+              className="display text-lg flex w-full touch-manipulation items-center justify-between border-b border-smoke/10 py-3.5 text-left text-olive"
               onClick={() => setServicesOpen((v) => !v)}
               aria-expanded={servicesOpen}
             >

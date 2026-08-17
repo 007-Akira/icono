@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   agentRules: false,
+  // Allow phones on the current development host to load Next.js client
+  // resources. Without this, the page renders but interactive controls never
+  // hydrate when it is opened through the LAN address.
+  allowedDevOrigins: ["192.168.1.9"],
   async redirects() {
     return [
       { source: "/services/skin", destination: "/services/skin-facial", permanent: true },
