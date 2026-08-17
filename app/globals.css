@@ -100,6 +100,18 @@ textarea {
 .hero-mobile-secondary {
   animation-name: hero-mobile-secondary;
 }
+@keyframes brand-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.brand-marquee-track {
+  animation: brand-marquee 38s linear infinite;
+  will-change: transform;
+}
+.brand-marquee-viewport:hover .brand-marquee-track {
+  animation-play-state: paused;
+}
 .field {
   width: 100%;
   border: 0;
@@ -159,5 +171,20 @@ textarea {
   }
   .hero-mobile-secondary {
     opacity: 0;
+  }
+  .brand-marquee-track {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none;
+    transform: none;
+  }
+  .brand-marquee-copy {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-inline: 1.25rem;
+  }
+  .brand-marquee-copy[aria-hidden="true"] {
+    display: none;
   }
 }
