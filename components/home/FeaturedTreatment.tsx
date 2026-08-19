@@ -5,19 +5,29 @@ import { SectionLabel } from "@/components/shared/SectionLabel";
 
 const featuredServices = [
   {
-    name: "Pigmentation Treatment",
+    name: "Dermabrasion",
     description:
-      "A cosmetic salon-care option for clients concerned about uneven-looking tone or visible pigmentation. The Icono team can discuss your concerns first and guide you toward an appropriate care routine and refreshed-looking finish.",
+      "A precision exfoliation treatment that gently renews the skin’s surface, helping reveal a smoother, fresher and more polished complexion.",
   },
   {
-    name: "Pimples Treatment",
+    name: "Microneedling",
     description:
-      "A consultation-led salon-care service for clients concerned about blemish-prone-looking skin. The focus remains on careful cosmetic skin care, with suitability discussed before the service rather than promising a medical outcome.",
+      "A targeted skin treatment designed to refine texture and promote a smoother, more even-looking complexion through controlled micro-stimulation.",
   },
   {
-    name: "Anti-Aging Facial",
+    name: "Hydrafacial",
     description:
-      "A salon facial for clients seeking moisturised, refreshed and cared-for-looking skin. It is selected around individual preferences and focuses on the cosmetic appearance of tired-looking skin without guaranteeing a specific result.",
+      "A refreshing multi-step facial that deeply cleanses, exfoliates and hydrates for skin that feels fresh, smooth and visibly revitalised.",
+  },
+  {
+    name: "BB Glow",
+    description:
+      "A skin-enhancing treatment designed to create a brighter, more even-looking complexion with a naturally polished finish.",
+  },
+  {
+    name: "Airbrush Makeup",
+    description:
+      "A lightweight makeup application technique that uses an airbrush to create an even, polished finish for occasions where a refined makeup look is desired.",
   },
 ] as const;
 
@@ -35,20 +45,26 @@ export function FeaturedTreatment() {
       <div className="page-shell relative">
         <div className="ml-auto max-w-3xl bg-floral p-8 sm:p-14 md:p-16">
           <SectionLabel>Featured Services</SectionLabel>
-          <h2 className="display mt-4 text-4xl sm:text-5xl">Signature skin care</h2>
-          <p className="mt-5 max-w-2xl leading-7 text-olive">
-            Three considered services from Icono&apos;s advanced facial-care selection. Speak with
-            the team to choose an option suited to your preferences.
-          </p>
+
+          <h2 className="display mt-4 text-4xl sm:text-5xl">
+            Signature services
+          </h2>
+
           <div className="mt-10 border-t border-olive/25">
             {featuredServices.map((service, index) => (
               <article
                 key={service.name}
                 className="grid gap-3 border-b border-olive/25 py-7 sm:grid-cols-[3rem_1fr] sm:gap-5"
               >
-                <p className="eyebrow text-olive">{String(index + 1).padStart(2, "0")}</p>
+                <p className="eyebrow text-olive">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+
                 <div>
-                  <h3 className="display text-2xl sm:text-3xl">{service.name}</h3>
+                  <h3 className="display text-2xl sm:text-3xl">
+                    {service.name}
+                  </h3>
+
                   <p className="mt-3 max-w-xl text-sm leading-6 text-olive">
                     {service.description}
                   </p>
@@ -56,6 +72,7 @@ export function FeaturedTreatment() {
               </article>
             ))}
           </div>
+
           <CTAButton href="/services/skin-facial" className="mt-9">
             Explore Skin &amp; Facial
           </CTAButton>
