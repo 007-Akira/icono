@@ -300,6 +300,10 @@ export const services: ServicePageData[] = [
             "Waterproof Makeup",
             "A water-resistant makeup option discussed according to your event and preferences.",
           ),
+          item(
+            "Airbrush Makeup",
+            "A lightweight makeup application technique that uses an airbrush to create an even, polished finish for occasions where a refined makeup look is desired.",
+          ),
         ],
       },
       {
