@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { GalleryItem, StudioItem } from "@/data/gallery";
 
 type ViewerItem = Pick<GalleryItem, "src" | "alt" | "ratio"> | StudioItem;
@@ -27,6 +27,32 @@ function Lightbox({
 }) {
   const previous = () => onChange((activeIndex - 1 + items.length) % items.length);
   const next = () => onChange((activeIndex + 1) % items.length);
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+
+  const handleTouchStart = (event: React.TouchEvent) => {
+  touchStartX.current = event.touches[0].clientX;
+  touchStartY.current = event.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent) => {
+  if (touchStartX.current === null || touchStartY.current === null) return;
+
+  const deltaX = event.changedTouches[0].clientX - touchStartX.current;
+  const deltaY = event.changedTouches[0].clientY - touchStartY.current;
+
+  touchStartX.current = null;
+  touchStartY.current = null;
+
+  // Ignore mostly-vertical swipes
+  if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY)) return;
+
+  if (deltaX < 0) {
+    next();
+  } else {
+    previous();
+  }
+  };
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
@@ -63,8 +89,10 @@ function Lightbox({
       </button>
 
       <div
-        className="absolute inset-0 px-5 py-20 sm:px-20 sm:py-12"
+        className="absolute inset-0 touch-pan-y px-5 py-20 sm:px-20 sm:py-12"
         onClick={(e) => e.stopPropagation()}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
         <Image
           src={items[activeIndex].src}
@@ -82,10 +110,19 @@ function Lightbox({
           event.stopPropagation();
           previous();
         }}
-        className="absolute left-2 top-1/2 z-20 grid size-14 -translate-y-1/2 place-items-center text-4xl font-light text-floral transition-opacity hover:opacity-60 sm:left-6"
+        className="absolute left-3 top-1/2 z-20 grid size-12 -translate-y-1/2 place-items-center rounded-full border border-floral/20 bg-smoke/30 text-floral backdrop-blur-sm transition-all hover:scale-105 hover:bg-smoke/60 sm:left-6"
         aria-label="Previous image"
       >
-        &lt;
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className="size-6"
+          aria-hidden="true"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
       </button>
       <button
         type="button"
@@ -93,10 +130,19 @@ function Lightbox({
           event.stopPropagation();
           next();
         }}
-        className="absolute right-2 top-1/2 z-20 grid size-14 -translate-y-1/2 place-items-center text-4xl font-light text-floral transition-opacity hover:opacity-60 sm:right-6"
+        className="absolute right-3 top-1/2 z-20 grid size-12 -translate-y-1/2 place-items-center rounded-full border border-floral/20 bg-smoke/30 text-floral backdrop-blur-sm transition-all hover:scale-105 hover:bg-smoke/60 sm:right-6"
         aria-label="Next image"
       >
-        &gt;
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className="size-6"
+          aria-hidden="true"
+        >
+          <path d="m9 18 6-6-6-6" />
+        </svg>
       </button>
     </div>
   );
