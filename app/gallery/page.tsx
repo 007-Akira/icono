@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { galleryItems } from "@/data/gallery";
+import { galleryItems, studioItems } from "@/data/gallery";
+import { GalleryViewer } from "@/components/gallery/GalleryViewer";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -24,38 +24,8 @@ export default function GalleryPage() {
           </p>
         </div>
       </section>
-      <section className="pb-section">
-        <div className="page-shell columns-1 gap-5 sm:columns-2 lg:columns-3">
-          {galleryItems.map((item) => (
-            <figure
-              key={item.id}
-              className="relative mb-5 break-inside-avoid overflow-hidden bg-bone"
-            >
-              <div
-                className={`relative ${
-                  item.ratio === "tall"
-                    ? "aspect-[3/5]"
-                    : item.ratio === "wide"
-                      ? "aspect-[4/3]"
-                      : item.ratio === "square"
-                        ? "aspect-square"
-                        : "aspect-[3/4]"
-                }`}
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="editorial-image object-cover"
-                  style={{ objectPosition: item.focalPoint }}
-                />
-              </div>
-            </figure>
-          ))}
-        </div>
-      </section>
-      <section className="bg-bone/40 py-section text-center">
+      <GalleryViewer workItems={galleryItems} studioItems={studioItems} />
+      <section className="bg-floral py-section text-center text-smoke">
         <h2 className="display text-5xl">Ready for your transformation?</h2>
         <CTAButton href="/contact#appointment" className="mt-8">
           Request an appointment

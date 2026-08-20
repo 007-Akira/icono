@@ -75,3 +75,63 @@ export const galleryItems: GalleryItem[] = [
 ];
 
 export const homepageGalleryItems = galleryItems.slice(0, 6);
+
+export type StudioItem = {
+  id: number;
+  src: string;
+  alt: string;
+  ratio: "portrait" | "wide" | "panorama";
+};
+
+// Authentic views of the Icono premises. These remain separate from client
+// portfolio work so visitors can clearly understand what each gallery shows.
+export const studioItems: StudioItem[] = [
+  {
+    id: 1,
+    src: "/images/studio/studio-1.webp",
+    alt: "Hair styling stations and mirrors inside Icono Beauty World",
+    ratio: "wide",
+  },
+  {
+    id: 2,
+    src: "/images/studio/studio-2.webp",
+    alt: "Illuminated mirrors and styling chairs inside the Icono studio",
+    ratio: "portrait",
+  },
+  {
+    id: 3,
+    src: "/images/studio/studio-3.webp",
+    alt: "A wide view of the hair styling area at Icono Beauty World",
+    ratio: "wide",
+  },
+  {
+    id: 4,
+    src: "/images/studio/studio-4.webp",
+    alt: "Private beauty treatment room inside the Icono studio",
+    ratio: "portrait",
+  },
+  {
+    id: 5,
+    src: "/images/studio/studio-5.webp",
+    alt: "Hair wash station and professional product display at Icono",
+    ratio: "wide",
+  },
+  {
+    id: 6,
+    src: "/images/studio/studio-6.webp",
+    alt: "Exterior of Icono Beauty World and Makeover Studio during the day",
+    ratio: "panorama",
+  },
+  {
+    id: 7,
+    src: "/images/studio/studio-7.webp",
+    alt: "Illuminated exterior of Icono Beauty World and Makeover Studio",
+    ratio: "panorama",
+  },
+  {
+    id: 8,
+    src: "/images/studio/studio-8.webp",
+    alt: "Reception and waiting area inside Icono Beauty World",
+    ratio: "wide",
+  },
+];
