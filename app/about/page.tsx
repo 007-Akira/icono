@@ -44,6 +44,7 @@ export default function AboutPage() {
           />
         </div>
       </section>
+      
       <section className="bg-floral py-section">
         <div className="page-shell grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-4">
@@ -118,57 +119,57 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-floral py-section">
-        <div className="page-shell grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-4">
-            <p className="eyebrow text-olive">Chapter 02 · Building Icono</p>
-            <h2 className="display mt-5 max-w-sm text-5xl leading-tight sm:text-6xl">
-              Built step by step.
-            </h2>
-          </div>
-          <div className="space-y-7 text-lg leading-8 text-olive md:col-span-6 md:col-start-7">
-            {buildingStory.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-        </div>
+      <div className="page-shell grid gap-12 md:grid-cols-12">
 
-        <figure className="page-shell mt-20 md:mt-28">
-          <div className="grid md:grid-cols-12">
-            <div className="relative aspect-[4/3] overflow-hidden bg-bone md:col-span-9 md:col-start-4">
+        {/* LEFT: heading + image */}
+        <div className="md:col-span-5">
+          <p className="eyebrow text-olive">
+            Chapter 02 · Building Icono
+          </p>
+
+          <h2 className="display mt-5 max-w-sm text-5xl leading-tight sm:text-6xl">
+            Built step by step.
+          </h2>
+
+          <figure className="mt-14">
+            <div className="relative aspect-[4/3] w-[85%] overflow-hidden bg-bone">
               <Image
                 src={referenceImages.founderTrainerRecognition}
                 alt="Ms. Revathy receiving recognition during a professional skill trainers programme"
                 fill
-                sizes="(min-width: 768px) 75vw, 100vw"
+                sizes="(min-width: 768px) 38vw, 85vw"
                 className="object-cover"
               />
             </div>
-          </div>
-          <figcaption className="mt-4 grid md:grid-cols-12">
-            <span className="eyebrow text-olive md:col-span-9 md:col-start-4">
-              A continuing commitment to teaching and professional development
-            </span>
-          </figcaption>
-        </figure>
 
-        <div className="page-shell mt-20 md:mt-28">
-          <div className="border-y border-olive/30 py-12 text-center sm:py-16">
-            <p className="display mx-auto max-w-4xl text-4xl leading-tight text-smoke sm:text-6xl">
-              {closingStory[0]}
-            </p>
-            <p className="eyebrow mt-8 text-olive">{closingStory[1]}</p>
-          </div>
+            <figcaption className="mt-4 w-[85%]">
+              <span className="eyebrow text-olive">
+                A continuing commitment to teaching and professional development
+              </span>
+            </figcaption>
+          </figure>
         </div>
-      </section>
-      <section className="bg-smoke py-section text-center text-floral">
-        <SectionLabel light>The Icono Standard</SectionLabel>
-        <h2 className="display mx-auto mt-5 max-w-4xl px-6 text-5xl sm:text-7xl">
-          Thoughtful care. Considered detail. A calm atmosphere.
-        </h2>
-        <CTAButton href="/contact#appointment" variant="light" className="mt-10">
-          Enquire with Icono
-        </CTAButton>
-      </section>
+
+        {/* RIGHT: story */}
+        <div className="space-y-7 text-lg leading-8 text-olive md:col-span-6 md:col-start-7">
+          {buildingStory.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+
+      </div>
+
+      {/* KEEP THIS PART */}
+      <div className="page-shell mt-20 md:mt-28">
+        <div className="border-y border-olive/30 py-12 text-center sm:py-16">
+          <p className="display mx-auto max-w-4xl text-4xl leading-tight text-smoke sm:text-6xl">
+            {closingStory[0]}
+          </p>
+          <p className="eyebrow mt-8 text-olive">{closingStory[1]}</p>
+        </div>
+      </div>
+    </section>
+
     </>
   );
 }
