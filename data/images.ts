@@ -16,4 +16,6 @@ export const referenceImages = {
   // placeholder portrait that previously lived at this location.
   founder: `${editorial}/ms-revathy-founder.webp`,
   founderTraining: `${editorial}/founder-training.webp`,
+  founderGermanyCertificate: `${editorial}/founder-germany-certificate.webp`,
+  founderTrainerRecognition: `${editorial}/founder-trainer-recognition.webp`,
 } as const;

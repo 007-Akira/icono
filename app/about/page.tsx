@@ -58,22 +58,35 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-smoke py-section text-floral">
-        <div className="page-shell grid gap-12 md:grid-cols-12 md:items-center">
-          <figure className="md:col-span-6">
-            <div className="relative aspect-[3/4] overflow-hidden bg-olive">
-              <Image
-                src={referenceImages.founderTraining}
-                alt="Ms. Revathy receiving a professional training certificate in Germany"
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="eyebrow mt-4 text-floral/65">
+        <div className="page-shell grid gap-16 md:grid-cols-12 md:items-center">
+          <div className="grid grid-cols-12 items-end gap-4 md:col-span-7">
+            <figure className="col-span-8">
+              <div className="relative aspect-[3/4] overflow-hidden bg-olive">
+                <Image
+                  src={referenceImages.founderTraining}
+                  alt="Ms. Revathy with her professional cosmetology training certificate in Germany"
+                  fill
+                  sizes="(min-width: 768px) 38vw, 66vw"
+                  className="object-cover"
+                />
+              </div>
+            </figure>
+            <figure className="col-span-7 col-start-6 -mt-16 border-[6px] border-smoke sm:-mt-24 md:-ml-8 md:mt-0">
+              <div className="relative aspect-[3/4] overflow-hidden bg-olive">
+                <Image
+                  src={referenceImages.founderGermanyCertificate}
+                  alt="Ms. Revathy receiving a professional training certificate in Germany"
+                  fill
+                  sizes="(min-width: 768px) 32vw, 58vw"
+                  className="object-cover"
+                />
+              </div>
+            </figure>
+            <p className="eyebrow col-span-12 mt-2 text-floral/65">
               Professional training in Germany
-            </figcaption>
-          </figure>
-          <div className="md:col-span-5 md:col-start-8">
+            </p>
+          </div>
+          <div className="md:col-span-4 md:col-start-9">
             <p className="eyebrow text-floral/65">Chapter 01 · Learning</p>
             <h2 className="display mt-5 text-5xl leading-tight sm:text-6xl">
               Learning without limits.
@@ -118,6 +131,25 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
+
+        <figure className="page-shell mt-20 md:mt-28">
+          <div className="grid md:grid-cols-12">
+            <div className="relative aspect-[4/3] overflow-hidden bg-bone md:col-span-9 md:col-start-4">
+              <Image
+                src={referenceImages.founderTrainerRecognition}
+                alt="Ms. Revathy receiving recognition during a professional skill trainers programme"
+                fill
+                sizes="(min-width: 768px) 75vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <figcaption className="mt-4 grid md:grid-cols-12">
+            <span className="eyebrow text-olive md:col-span-9 md:col-start-4">
+              A continuing commitment to teaching and professional development
+            </span>
+          </figcaption>
+        </figure>
 
         <div className="page-shell mt-20 md:mt-28">
           <div className="border-y border-olive/30 py-12 text-center sm:py-16">
