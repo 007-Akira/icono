@@ -8,3 +8,6 @@ out
 npm-debug.log*
 *.tsbuildinfo
 .DS_Store
+
+# Local-only client delivery package; may contain account handover details.
+client-handover/

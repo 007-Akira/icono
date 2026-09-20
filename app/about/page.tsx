@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { referenceImages } from "@/data/images";
 import { founder } from "@/data/founder";
-import { CTAButton } from "@/components/shared/CTAButton";
 import { SectionLabel } from "@/components/shared/SectionLabel";
 import { createPageMetadata } from "@/lib/seo";
 
